@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "node --test tests/",
-    "validate": "node tools/validate-data.mjs"
+    "validate": "node tools/validate-data.mjs",
+    "generate-audio": "node tools/generate-audio.mjs"
   }
 }

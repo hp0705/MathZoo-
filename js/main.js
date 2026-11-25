@@ -1,7 +1,7 @@
 import { loadProgress, saveProgress, resetProgress } from "./core/storage.js";
 import { getChapter } from "./core/story.js";
 import { unlockAudio, setMasterVolume } from "./audio/sfx.js";
-import { speakOne, cancelSpeech, waitForVoices, hasViVoice } from "./audio/speak.js";
+import { speakOne, cancelSpeech, waitForVoices, hasViVoice, setSpeechVolume } from "./audio/speak.js";
 import { renderHomeMap } from "./ui/home-map.js";
 import { renderStoryIntro } from "./ui/story-intro.js";
 import { startLessonRunner } from "./ui/lesson.js";
@@ -26,6 +26,7 @@ async function boot() {
   const i18n = { vi: viI18n, ja: jaI18n };
   let progress = loadProgress();
   setMasterVolume(progress.settings.volume ?? 0.9);
+  setSpeechVolume(progress.settings.volume ?? 0.9);
 
   const appEl = document.getElementById("app");
   const screenEl = document.getElementById("screen");
@@ -179,6 +180,7 @@ async function boot() {
         onUpdate: (nextSettings) => {
           progress.settings = { ...progress.settings, ...nextSettings };
           setMasterVolume(progress.settings.volume ?? 0.9);
+          setSpeechVolume(progress.settings.volume ?? 0.9);
           saveProgress(progress);
           showMap();
         },
