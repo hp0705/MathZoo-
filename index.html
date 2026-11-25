@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>MathZoo</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div id="app" class="app-shell" data-stage="1">
+    <header class="top-bar">
+      <div class="top-left">
+        <button id="btn-back" class="btn-pill btn-icon" hidden aria-label="Back">←</button>
+        <div class="brand-title" id="brand-title">MathZoo</div>
+      </div>
+      <div class="top-center" id="top-progress" hidden></div>
+      <div class="top-right">
+        <button id="btn-replay" class="btn-pill btn-icon" hidden aria-label="Replay">🔊</button>
+        <button id="btn-lang" class="btn-pill" aria-label="Language">VI / 日本語</button>
+        <button id="btn-stickers" class="btn-pill" aria-label="Stickers">★ <span id="sticker-count">0</span></button>
+        <button id="btn-parent" class="btn-pill btn-parent" aria-label="Parent" title="Giữ 3 giây / 3びょう おす">
+          <span class="hold-ring"></span>
+          <span id="parent-btn-label">⚙</span>
+        </button>
+      </div>
+    </header>
+    <main id="screen" class="screen-host"></main>
+    <div id="feedback-banner" class="feedback-banner" hidden aria-live="polite"></div>
+  </div>
+  <div id="modal-root"></div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

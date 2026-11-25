@@ -1,0 +1,44 @@
+:root {
+  --bg: #FFF8EC;
+  --ink: #2B2A4C;
+  --primary: #1F78C8;
+  --receive: #18835F;
+  --give: #C93A34;
+  --total: #FFC83D;
+  --accent: #6B4BC8;
+  --focus: #1F78C8;
+  --ok-bg: #E4F5EC;
+  --amber: #B26A00;
+  --amber-bg: #FFF1D6;
+  --disabled: #E9E4F2;
+  --disabled-border: #B9B3CC;
+  --card-bg: #FFFFFF;
+  --shadow: rgba(43, 42, 76, 0.14);
+
+  --stage-fill: #FFE08A;
+  --stage-border: #946A00;
+
+  --radius-btn: 28px;
+  --radius-card: 24px;
+  --border-w: 4px;
+  --safe: 24px;
+  --font-main: "Segoe UI", "Roboto", "Noto Sans", "Helvetica Neue", Arial, "Hiragino Maru Gothic ProN", "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+}
+
+:lang(vi) {
+  --font-main: "Segoe UI", "Roboto", "Noto Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+}
+
+:lang(ja) {
+  --font-main: "Hiragino Maru Gothic ProN", "Yu Gothic UI", "Meiryo", "Noto Sans JP", "Segoe UI", system-ui, sans-serif;
+}
+
+[data-stage="1"] { --stage-fill: #FFE08A; --stage-border: #946A00; }
+[data-stage="2"] { --stage-fill: #BFEFDD; --stage-border: #2E8B6E; }
+[data-stage="3"] { --stage-fill: #CFE8FF; --stage-border: #2F7FC4; }
+[data-stage="4"] { --stage-fill: #E3D7FF; --stage-border: #7A5BD0; }
+[data-stage="5"] { --stage-fill: #FFD0E0; --stage-border: #C2456F; }
+[data-stage="6"] { --stage-fill: #FFD9B3; --stage-border: #B8610A; }
+[data-stage="7"] { --stage-fill: #D5F2B5; --stage-border: #4E8F1F; }
+[data-stage="8"] { --stage-fill: #BDEBF2; --stage-border: #1B7F93; }
+[data-stage="9"] { --stage-fill: #E8EAF0; --stage-border: #5B6477; }

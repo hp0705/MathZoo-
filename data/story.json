@@ -1,0 +1,300 @@
+{
+ "chapters": [
+  {
+   "stage": 1,
+   "zone": {
+    "vi": "Vườn Cà Rốt",
+    "ja": "にんじんばたけ"
+   },
+   "animal": {
+    "vi": "Thỏ Bông",
+    "ja": "うさぎの ふわちゃん"
+   },
+   "object": {
+    "vi": "cà rốt",
+    "ja": "にんじん",
+    "classifier": "củ",
+    "counter": "ko"
+   },
+   "intro": {
+    "vi": "Chào bé {name}! Đây là Vườn Cà Rốt. Thỏ Bông đang hái cà rốt cho Lễ hội Ngôi sao Toán. Bé giúp Thỏ đếm nhé!",
+    "ja": "こんにちは、{name}ちゃん！ここは にんじんばたけだよ。うさぎの ふわちゃんが おまつりの ために にんじんを とっているよ。いっしょに かぞえよう！"
+   },
+   "outro": {
+    "vi": "Thỏ Bông có đủ cà rốt cho lễ hội rồi. Cảm ơn bé {name} nhiều lắm!",
+    "ja": "ふわちゃんの にんじんが いっぱいに なったよ。{name}ちゃん、ありがとう！"
+   },
+   "sticker": {
+    "vi": "Cà rốt vàng",
+    "ja": "きんの にんじん"
+   }
+  },
+  {
+   "stage": 2,
+   "zone": {
+    "vi": "Rừng Táo",
+    "ja": "りんごのもり"
+   },
+   "animal": {
+    "vi": "Gấu Mật",
+    "ja": "くまの はちくん"
+   },
+   "object": {
+    "vi": "táo",
+    "ja": "りんご",
+    "classifier": "quả",
+    "counter": "ko"
+   },
+   "intro": {
+    "vi": "Bé {name} ơi, Gấu Mật nhặt được thật nhiều táo trong rừng. Mình cùng đếm đến mười nhé!",
+    "ja": "{name}ちゃん、くまの はちくんが もりで りんごを たくさん ひろったよ。じゅうまで かぞえよう！"
+   },
+   "outro": {
+    "vi": "Gấu Mật vui lắm! Bé {name} đếm táo giỏi quá.",
+    "ja": "はちくんは おおよろこび！{name}ちゃん、りんごを じょうずに かぞえたね。"
+   },
+   "sticker": {
+    "vi": "Táo vàng",
+    "ja": "きんの りんご"
+   }
+  },
+  {
+   "stage": 3,
+   "zone": {
+    "vi": "Hồ Cá",
+    "ja": "さかなのいけ"
+   },
+   "animal": {
+    "vi": "Mèo Mướp",
+    "ja": "ねこの みけちゃん"
+   },
+   "object": {
+    "vi": "cá",
+    "ja": "さかな",
+    "classifier": "con",
+    "counter": "hiki"
+   },
+   "intro": {
+    "vi": "Bé {name} đến Hồ Cá rồi! Mèo Mướp câu cá rồi chia cho bạn. Bé giúp Mèo tính nhé!",
+    "ja": "{name}ちゃん、さかなの いけに ついたよ！ねこの みけちゃんは つった さかなを ともだちに わけるよ。いっしょに かんがえよう！"
+   },
+   "outro": {
+    "vi": "Mèo Mướp có bữa cá thật ngon. Cảm ơn bé {name}!",
+    "ja": "みけちゃんは おいしい さかなを たべられるよ。{name}ちゃん、ありがとう！"
+   },
+   "sticker": {
+    "vi": "Cá lấp lánh",
+    "ja": "きらきらの さかな"
+   }
+  },
+  {
+   "stage": 4,
+   "zone": {
+    "vi": "Sân Bóng",
+    "ja": "ボールひろば"
+   },
+   "animal": {
+    "vi": "Cáo Cam",
+    "ja": "きつねの こんちゃん"
+   },
+   "object": {
+    "vi": "bóng",
+    "ja": "ボール",
+    "classifier": "quả",
+    "counter": "ko"
+   },
+   "intro": {
+    "vi": "Bé {name} giỏi quá, đến Sân Bóng rồi! Cáo Cam có rất nhiều bóng. Mình tính cùng Cáo nhé!",
+    "ja": "{name}ちゃん、ボールひろばに きたよ！きつねの こんちゃんの ボールで けいさんしよう！"
+   },
+   "outro": {
+    "vi": "Cáo Cam chơi bóng thật vui. Bé {name} tính giỏi lắm!",
+    "ja": "こんちゃんは ボールあそびが たのしいって。{name}ちゃん、けいさんが じょうずだね！"
+   },
+   "sticker": {
+    "vi": "Bóng lấp lánh",
+    "ja": "きらきらの ボール"
+   }
+  },
+  {
+   "stage": 5,
+   "zone": {
+    "vi": "Bãi Bóng Bay",
+    "ja": "ふうせんひろば"
+   },
+   "animal": {
+    "vi": "Voi Con",
+    "ja": "ぞうの ぱおちゃん"
+   },
+   "object": {
+    "vi": "bóng bay",
+    "ja": "ふうせん",
+    "classifier": "quả",
+    "counter": "ko"
+   },
+   "intro": {
+    "vi": "Bé {name} ơi, Voi Con thổi thật nhiều bóng bay! Mười bóng là một chục. Mình đếm đến hai mươi nhé!",
+    "ja": "{name}ちゃん、ぞうの ぱおちゃんが ふうせんを たくさん ふくらませたよ！じゅっこで ひとまとまり。にじゅうまで かぞえよう！"
+   },
+   "outro": {
+    "vi": "Bóng bay bay lên trời rồi! Cảm ơn bé {name}, Voi Con vui lắm.",
+    "ja": "ふうせんが そらに とんだよ！{name}ちゃん、ぱおちゃんは うれしいって。"
+   },
+   "sticker": {
+    "vi": "Bóng bay cầu vồng",
+    "ja": "にじいろの ふうせん"
+   }
+  },
+  {
+   "stage": 6,
+   "zone": {
+    "vi": "Tháp Đom Đóm",
+    "ja": "ほたるのとう"
+   },
+   "animal": {
+    "vi": "Cú Mèo",
+    "ja": "ふくろうの ほーくん"
+   },
+   "object": {
+    "vi": "đom đóm",
+    "ja": "ほたる",
+    "classifier": "con",
+    "counter": "hiki"
+   },
+   "intro": {
+    "vi": "Bé {name} ơi, trời tối rồi. Cú Mèo cần đếm đom đóm trên tháp, nhiều lắm, đến một trăm! Mình đếm theo chục nhé!",
+    "ja": "{name}ちゃん、よるに なったよ。ふくろうの ほーくんが とうの ほたるを かぞえるよ。ひゃくまで！じゅうずつ かぞえよう！"
+   },
+   "outro": {
+    "vi": "Cả tháp sáng lấp lánh! Bé {name} đếm đến một trăm rồi, giỏi quá.",
+    "ja": "とうが きらきら ひかったよ！{name}ちゃん、ひゃくまで かぞえられたね。"
+   },
+   "sticker": {
+    "vi": "Đom đóm phát sáng",
+    "ja": "ひかる ほたる"
+   }
+  },
+  {
+   "stage": 7,
+   "zone": {
+    "vi": "Vườn Chuối",
+    "ja": "バナナのはたけ"
+   },
+   "animal": {
+    "vi": "Khỉ Nâu",
+    "ja": "さるの きっきくん"
+   },
+   "object": {
+    "vi": "chuối",
+    "ja": "バナナ",
+    "classifier": "quả",
+    "counter": "ko"
+   },
+   "intro": {
+    "vi": "Bé {name} ơi, Khỉ Nâu hái chuối rồi chia cho các bạn. Mình giúp Khỉ tính thật chính xác, không cần vội nhé!",
+    "ja": "{name}ちゃん、さるの きっきくんが バナナを とって ともだちに わけるよ。ゆっくり ただしく けいさんしよう！"
+   },
+   "outro": {
+    "vi": "Khỉ Nâu chia chuối xong rồi. Bé {name} tính giỏi như nhà toán học!",
+    "ja": "きっきくんは バナナを わけおわったよ。{name}ちゃん、はかせみたいだね！"
+   },
+   "sticker": {
+    "vi": "Chuối vàng",
+    "ja": "きんの バナナ"
+   }
+  },
+  {
+   "stage": 8,
+   "zone": {
+    "vi": "Sân Băng",
+    "ja": "こおりのひろば"
+   },
+   "animal": {
+    "vi": "Cánh Cụt",
+    "ja": "ペンギンの ぺんちゃん"
+   },
+   "object": {
+    "vi": "viên kẹo",
+    "ja": "あめ",
+    "classifier": "viên",
+    "counter": "ko"
+   },
+   "intro": {
+    "vi": "Bé {name} đến Sân Băng, nơi cuối cùng rồi! Cánh Cụt có một thử thách lớn cho bé. Bé thử sức nhé!",
+    "ja": "{name}ちゃん、さいごの こおりのひろばに きたよ！ペンギンの ぺんちゃんから おおきな チャレンジが あるよ。やってみよう！"
+   },
+   "outro": {
+    "vi": "Hoan hô! Bé {name} đã giúp cả tám bạn thú. Lễ hội Ngôi sao Toán bắt đầu thôi!",
+    "ja": "やったね！{name}ちゃんは はちにんの どうぶつを たすけたよ。ほしの おまつりが はじまるよ！"
+   },
+   "sticker": {
+    "vi": "Huy chương ngôi sao",
+    "ja": "ほしの メダル"
+   }
+  },
+  {
+   "stage": 9,
+   "optional": true,
+   "zone": {
+    "vi": "Quảng trường Lễ hội",
+    "ja": "おまつりひろば"
+   },
+   "animal": {
+    "vi": "Các bạn thú",
+    "ja": "どうぶつたち"
+   },
+   "object": {
+    "vi": "đèn lồng",
+    "ja": "ちょうちん",
+    "classifier": "cái",
+    "counter": "ko"
+   },
+   "intro": {
+    "vi": "Bé {name} ơi, lễ hội còn nhiều trò vui nữa! Các bạn thú cần bé xếp đèn lồng, đo ruy băng và xem giờ. Mình giúp các bạn nhé!",
+    "ja": "{name}ちゃん、おまつりには まだ たのしい ことが あるよ！どうぶつたちが ちょうちんを ならべたり、リボンを はかったり、とけいを みたり するよ。いっしょに てつだおう！"
+   },
+   "outro": {
+    "vi": "Lễ hội thật rực rỡ! Cả tám bạn thú cảm ơn bé {name}.",
+    "ja": "おまつりが きらきら かがやいたよ！はちにんの どうぶつが {name}ちゃんに ありがとうって！"
+   },
+   "sticker": {
+    "vi": "Cờ lễ hội",
+    "ja": "おまつりの はた"
+   }
+  }
+ ],
+ "finale": {
+  "vi": "Lễ hội bắt đầu rồi! Bé {name} xinh đẹp nhận Huy chương Ngôi sao Toán của Vườn thú MathZoo!",
+  "ja": "おまつりが はじまるよ！かわいい{name}ちゃんに ほしの メダルを あげるね！"
+ },
+ "beats": {
+  "mid": [
+   {
+    "vi": "{animal} đang đợi bé {name} giúp đếm {object} đây!",
+    "ja": "{animal}が {name}ちゃんを まっているよ。{object}を いっしょに かぞえよう！"
+   },
+   {
+    "vi": "Bé {name} ơi, {animal} có thêm {object} nữa nè. Mình xem nhé!",
+    "ja": "{name}ちゃん、{animal}に また {object}が きたよ。みてみよう！"
+   },
+   {
+    "vi": "Hôm nay {animal} nhờ bé {name} một việc nhỏ nhé!",
+    "ja": "きょうも {animal}が {name}ちゃんに おねがいが あるよ！"
+   }
+  ],
+  "close": [
+   {
+    "vi": "{animal} cảm ơn bé {name}! Bé nhận được một ngôi sao.",
+    "ja": "{animal}が ありがとうって！{name}ちゃん、ほしを ひとつ もらったよ。"
+   },
+   {
+    "vi": "Xong rồi! {animal} vẫy tay chào bé {name}.",
+    "ja": "できたね！{animal}が {name}ちゃんに てを ふっているよ。"
+   },
+   {
+    "vi": "Bé {name} giúp {animal} xong rồi. Hẹn gặp lại nhé!",
+    "ja": "{name}ちゃんの おかげで {animal}は たすかったよ。またね！"
+   }
+  ]
+ }
+}

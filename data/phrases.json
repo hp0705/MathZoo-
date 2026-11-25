@@ -1,0 +1,220 @@
+{
+ "praise": [
+  {
+   "vi": "Giỏi quá, bé {name} xinh đẹp!",
+   "ja": "すごいね、かわいい{name}ちゃん！",
+   "for": "f"
+  },
+  {
+   "vi": "Đúng rồi! Bé {name} đáng yêu đếm hay quá!",
+   "ja": "せいかい！{name}ちゃん、じょうずに かぞえたね！",
+   "for": "any"
+  },
+  {
+   "vi": "Tuyệt vời! Bé {name} thông minh ghê!",
+   "ja": "やったね、{name}ちゃん！てんさいだね！",
+   "for": "any"
+  },
+  {
+   "vi": "Hoan hô bé {name}, đúng rồi!",
+   "ja": "だいせいかい！{name}ちゃん、かっこいい！",
+   "for": "any"
+  },
+  {
+   "vi": "Chính xác! Bé {name} giỏi lắm!",
+   "ja": "えらいね、{name}ちゃん！さいこうだよ！",
+   "for": "any"
+  },
+  {
+   "vi": "Wow, bé {name} xinh đẹp làm đúng rồi!",
+   "ja": "わあ、かわいい{name}ちゃん、あたりだよ！",
+   "for": "f"
+  },
+  {
+   "vi": "Siêu quá! Bé {name} giỏi nhất vườn thú!",
+   "ja": "すごーい！{name}ちゃんは どうぶつえんで いちばん！",
+   "for": "any"
+  },
+  {
+   "vi": "Bé {name} ơi, đúng rồi đó! Tài quá!",
+   "ja": "{name}ちゃん、ぴんぽーん！よくできました！",
+   "for": "any"
+  }
+ ],
+ "streak": [
+  {
+   "vi": "Wow, đúng liên tục luôn! Bé {name} siêu quá!",
+   "ja": "わあ、れんぞくで せいかい！{name}ちゃん、すごい！",
+   "for": "any"
+  },
+  {
+   "vi": "Bé {name} đúng liền mấy câu rồi, tuyệt vời!",
+   "ja": "{name}ちゃん、つづけて あたりだよ！さいこう！",
+   "for": "any"
+  },
+  {
+   "vi": "Chuỗi đúng dài ghê! Bé {name} giỏi lắm!",
+   "ja": "ずっと せいかいだね！{name}ちゃん、えらい！",
+   "for": "any"
+  }
+ ],
+ "wrong1": [
+  {
+   "vi": "Sai rồi, bé {name} ơi. Cố gắng lên nào, làm lại một lần nữa nhé!",
+   "ja": "ちがうよ、{name}ちゃん。がんばって、もういっかい やってみよう！",
+   "for": "any"
+  },
+  {
+   "vi": "Chưa đúng rồi. Bé {name} thử lại nào!",
+   "ja": "おしい！{name}ちゃん、もういちど ためしてみよう！",
+   "for": "any"
+  },
+  {
+   "vi": "Nhầm rồi, không sao đâu bé {name} ơi. Mình thử lần nữa nhé!",
+   "ja": "まちがえちゃったね。だいじょうぶ、もういっかい！",
+   "for": "any"
+  },
+  {
+   "vi": "Ồ, chưa đúng rồi! Bé {name} cố lên, làm lại nào!",
+   "ja": "あれれ、ちがうみたい！{name}ちゃん、もういちど やってみよう！",
+   "for": "any"
+  },
+  {
+   "vi": "Không phải rồi. Bé {name} ơi, mình thử một lần nữa nhé!",
+   "ja": "ざんねん、ちがうよ。{name}ちゃん、もういっかい ためそうね！",
+   "for": "any"
+  },
+  {
+   "vi": "Sai mất rồi! Nhưng bé {name} giỏi mà, thử lại nào!",
+   "ja": "まちがいだよ。でも {name}ちゃんなら できるよ、もういちど！",
+   "for": "any"
+  }
+ ],
+ "wrong2": [
+  {
+   "vi": "Không sao đâu. Mình cùng đếm lại với nhau nào!",
+   "ja": "だいじょうぶ。いっしょに かぞえなおそう！",
+   "for": "any"
+  },
+  {
+   "vi": "Bé {name} đừng buồn, mình đếm lại từng cái nhé!",
+   "ja": "{name}ちゃん、ゆっくり ひとつずつ かぞえてみよう！",
+   "for": "any"
+  },
+  {
+   "vi": "Chậm thôi nào bé {name} ơi, mình đếm cùng nhau!",
+   "ja": "いっしょに ゆびで さわってみよう、{name}ちゃん！",
+   "for": "any"
+  },
+  {
+   "vi": "Cố lên bé {name}, mình giúp bé đếm nhé!",
+   "ja": "がんばれ、{name}ちゃん！いっしょに かぞえるよ！",
+   "for": "any"
+  },
+  {
+   "vi": "Thử một lần nữa nào, mình nhìn thật kỹ từng cái nhé!",
+   "ja": "もう いっかい、よーく みてみようね！",
+   "for": "any"
+  }
+ ],
+ "wrong3": [
+  {
+   "vi": "Mình cùng xem nhé! Đáp án là {answer}. Bé {name} thử câu khác nào!",
+   "ja": "いっしょに みてみよう！こたえは {answer}だよ。{name}ちゃん、つぎも やってみよう！",
+   "for": "any"
+  },
+  {
+   "vi": "Không sao, câu này khó mà. Đáp án là {answer}. Mình làm câu tiếp nhé, bé {name}!",
+   "ja": "このもんだいは むずかしいね。こたえは {answer}だよ。{name}ちゃん、つぎへ いこう！",
+   "for": "any"
+  },
+  {
+   "vi": "Bé {name} ơi, mình xem cùng nhau nhé. Là {answer} đó. Câu sau mình làm được!",
+   "ja": "{name}ちゃん、いっしょに みよう。{answer}だよ。つぎは きっと できるよ！",
+   "for": "any"
+  }
+ ],
+ "wrong3cmp": [
+  {
+   "vi": "Mình cùng xem nhé! {answer} đó. Bé {name} thử câu khác nào!",
+   "ja": "いっしょに みてみよう！{answer}よ。{name}ちゃん、つぎも やってみよう！",
+   "for": "any"
+  },
+  {
+   "vi": "Không sao, câu này khó mà. {answer} nha. Mình làm câu tiếp nhé, bé {name}!",
+   "ja": "このもんだいは むずかしいね。{answer}よ。{name}ちゃん、つぎへ いこう！",
+   "for": "any"
+  },
+  {
+   "vi": "Bé {name} ơi, mình xem cùng nhau nhé. {answer} đó. Câu sau mình làm được!",
+   "ja": "{name}ちゃん、いっしょに みよう。{answer}よ。つぎは きっと できるよ！",
+   "for": "any"
+  }
+ ],
+ "finish": [
+  {
+   "vi": "Hoan hô bé {name} xinh đẹp! Bé làm xong rồi!",
+   "ja": "やったね、かわいい{name}ちゃん！できたよ！",
+   "for": "f"
+  },
+  {
+   "vi": "Tuyệt vời! Bé {name} đáng yêu đã hoàn thành!",
+   "ja": "だいせいかい！{name}ちゃん、ぜんぶ できたね！",
+   "for": "any"
+  },
+  {
+   "vi": "Bé {name} làm xong bài rồi, siêu quá!",
+   "ja": "{name}ちゃん、さいごまで よくがんばったね！",
+   "for": "any"
+  },
+  {
+   "vi": "Xong rồi! Bé {name} nhận được sao lấp lánh!",
+   "ja": "できた、できた！{name}ちゃん、ぴかぴかの ほしだよ！",
+   "for": "any"
+  },
+  {
+   "vi": "Giỏi lắm bé {name}, mình làm xong hết rồi!",
+   "ja": "すごいね、{name}ちゃん！ぜんぶ おわったよ！",
+   "for": "any"
+  },
+  {
+   "vi": "Bé {name} thật là thiên tài! Mời bé nhận sao!",
+   "ja": "{name}ちゃんは てんさい！ほしを どうぞ！",
+   "for": "any"
+  }
+ ],
+ "greet": [
+  {
+   "vi": "Chào bé {name} xinh đẹp! Mình cùng chơi nhé!",
+   "ja": "こんにちは、かわいい{name}ちゃん！いっしょに あそぼう！",
+   "for": "f"
+  },
+  {
+   "vi": "Chào bé {name}! Hôm nay mình chơi gì nào?",
+   "ja": "{name}ちゃん、きょうも がんばろうね！",
+   "for": "any"
+  },
+  {
+   "vi": "Bé {name} đến rồi! Các bạn thú đang đợi đó!",
+   "ja": "{name}ちゃん、どうぶつたちが まっているよ！",
+   "for": "any"
+  }
+ ],
+ "idle": [
+  {
+   "vi": "Bé {name} ơi, mình chạm vào đây nhé!",
+   "ja": "{name}ちゃん、ここを さわってみよう！",
+   "for": "any"
+  },
+  {
+   "vi": "Cùng thử nào bé {name}, chạm vào hình nhé!",
+   "ja": "いっしょに やってみよう、{name}ちゃん！",
+   "for": "any"
+  },
+  {
+   "vi": "Mình đang đợi bé {name} đó!",
+   "ja": "{name}ちゃんを まっているよ！",
+   "for": "any"
+  }
+ ]
+}

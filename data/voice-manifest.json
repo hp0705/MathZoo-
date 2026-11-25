@@ -1,0 +1,30 @@
+{
+  "story-count-01": {
+    "vi": "Mình cùng đếm nhé!",
+    "ja": "いっしょに かぞえよう！"
+  },
+  "story-add-01": {
+    "vi": "Có thêm bạn mới đến nè!",
+    "ja": "あたらしい ともだちが きたよ！"
+  },
+  "story-take-01": {
+    "vi": "Mình chia bớt cho bạn nhé!",
+    "ja": "ともだちに わけて あげよう！"
+  },
+  "story-cmp-01": {
+    "vi": "Bên nào nhiều hơn nhỉ?",
+    "ja": "どっちが おおいかな？"
+  },
+  "story-ten-01": {
+    "vi": "Xếp đủ mười vào khung nhé!",
+    "ja": "じゅうの わくに ならべよう！"
+  },
+  "story-board-01": {
+    "vi": "Tìm số còn thiếu trên bảng nào!",
+    "ja": "あいている すうじを みつけよう！"
+  },
+  "story-plaza-01": {
+    "vi": "Cùng chơi trò vui ở Quảng trường Lễ hội nhé!",
+    "ja": "おまつりひろばで たのしく あそぼう！"
+  }
+}
