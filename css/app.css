@@ -72,6 +72,25 @@ html, body {
   box-shadow: 0 6px 0 var(--shadow);
   transition: transform 0.12s ease, background 0.15s ease;
   touch-action: manipulation;
+  position: relative;
+  overflow: hidden;
+}
+.btn-pill > * { position: relative; z-index: 1; }
+.btn-pill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--total);
+  opacity: 0.45;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0s linear;
+  pointer-events: none;
+  z-index: 0;
+}
+.btn-pill.is-holding::before {
+  transform: scaleX(1);
+  transition: transform 1s linear;
 }
 
 .btn-pill:active, .choice-card:active { transform: translateY(3px); box-shadow: 0 3px 0 var(--shadow); }

@@ -84,7 +84,6 @@ async function boot() {
     btnBack.hidden = false;
     btnReplay.hidden = false;
     btnLang.hidden = true;
-    btnBack.onclick = showMap;
     const line = renderStoryIntro(screenEl, {
       lesson,
       storyData,
@@ -100,7 +99,6 @@ async function boot() {
   };
 
   const runLesson = (lesson) => {
-    btnBack.onclick = showMap;
     btnLang.hidden = true;
     startLessonRunner(screenEl, {
       lesson,
@@ -149,6 +147,37 @@ async function boot() {
   };
 
   window.addEventListener("pointerdown", unlockAudio, { once: true });
+
+  // Require >1s hold on Back button so kids don't exit mid-lesson by mistake
+  let backTimer = null;
+  let backStart = 0;
+  const clearBackHold = (e) => {
+    if (backTimer) {
+      clearTimeout(backTimer);
+      backTimer = null;
+      if (e?.type === "pointerup" && Date.now() - backStart < 950) {
+        bannerEl.textContent = progress.settings.lang === "ja"
+          ? "もどるは 1びょう ながおししてね"
+          : "Giữ nút ← hơn 1 giây để quay về bản đồ";
+        bannerEl.hidden = false;
+        setTimeout(() => { bannerEl.hidden = true; }, 2000);
+      }
+    }
+    btnBack.classList.remove("is-holding");
+  };
+  btnBack.addEventListener("pointerdown", () => {
+    backStart = Date.now();
+    void btnBack.offsetWidth;
+    btnBack.classList.add("is-holding");
+    backTimer = setTimeout(() => {
+      backTimer = null;
+      btnBack.classList.remove("is-holding");
+      showMap();
+    }, 1000);
+  });
+  btnBack.addEventListener("pointerup", clearBackHold);
+  btnBack.addEventListener("pointerleave", clearBackHold);
+  btnBack.addEventListener("pointercancel", clearBackHold);
 
   btnReplay.addEventListener("click", () => {
     if (lastSpoken) speakOne(lastSpoken.speak, lastSpoken.lang);
