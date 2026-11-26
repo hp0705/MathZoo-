@@ -44,12 +44,18 @@ export function renderA1(container, { stage, max, chapter, lang, t, onComplete, 
   });
 }
 
+let lastA2Target = -1;
+
 export function renderA2(container, { stage, max, chapter, lang, t, onResult, onSpeakText }) {
-  const p = generateProblem({ kind: "add", max: Math.max(2, max), seed: Date.now() & 0xffff });
-  const target = Math.min(max, Math.max(1, p.a));
-  const choices = Array.from(new Set([target, Math.max(1, target - 1), Math.min(max, target + 1)]));
+  const cap = Math.max(1, max);
+  let target = 1 + Math.floor(Math.random() * cap);
+  if (cap > 1 && target === lastA2Target) {
+    target = (target % cap) + 1;
+  }
+  lastA2Target = target;
+  const choices = Array.from(new Set([target, Math.max(1, target - 1), Math.min(cap, target + 1)]));
   while (choices.length < 3) {
-    const cand = 1 + Math.floor(Math.random() * Math.max(3, max));
+    const cand = 1 + Math.floor(Math.random() * Math.max(3, cap));
     if (!choices.includes(cand)) choices.push(cand);
   }
   choices.sort((a, b) => a - b);

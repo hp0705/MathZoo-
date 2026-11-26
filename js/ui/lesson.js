@@ -6,7 +6,7 @@ import { playTotalChime, playWrongBoing, playRewardFanfare } from "../audio/sfx.
 import { renderA1, renderA2, renderA3 } from "./lesson-a123.js";
 import { renderGiveReceive } from "./scene-give-receive.js";
 import { renderCompareScene } from "./scene-compare.js";
-import { renderA5Split, renderA6TenFrame, renderA7Match, renderA9Board, renderA11Ordinal } from "./activities-extra.js";
+import { renderA5Split, renderA6TenFrame, renderA7Match, renderA9Board, renderA11Ordinal, renderA15Neighbor, renderA16Bond } from "./activities-extra.js";
 import { renderTracing } from "./tracing.js";
 import { renderA12Pattern, renderA13ShapeOrPos, renderA14MeasureTime } from "./activities-plaza.js";
 
@@ -21,9 +21,18 @@ export function startLessonRunner(container, {
   const lastIdx = { vi: -1, ja: -1 };
   let locked = false;
 
-  const showBanner = () => {
-    // Keep banner hidden during activities so it never covers answers; ✓/✕ animations show on cards
-    bannerEl.hidden = true;
+  let bannerTimer = null;
+  const showBanner = (msg) => {
+    if (!msg) {
+      bannerEl.hidden = true;
+      return;
+    }
+    if (bannerTimer) clearTimeout(bannerTimer);
+    bannerEl.textContent = msg;
+    bannerEl.hidden = false;
+    bannerTimer = setTimeout(() => {
+      bannerEl.hidden = true;
+    }, 2000);
   };
 
   const renderDots = () => {
@@ -132,13 +141,15 @@ export function startLessonRunner(container, {
     else if (act.type === "A5") renderA5Split(container, ctx);
     else if (act.type === "A6") renderA6TenFrame(container, ctx);
     else if (act.type === "A7") renderA7Match(container, ctx);
-    else if (act.type === "A8") renderTracing(container, { digit: act.digit ?? 1, t, onComplete: handleComplete, onSpeakText: ctx.onSpeakText });
+    else if (act.type === "A8") renderTracing(container, { digit: act.digit ?? 1, lang, t, onComplete: handleComplete, onSpeakText: ctx.onSpeakText });
     else if (act.type === "A9") renderA9Board(container, ctx);
     else if (act.type === "A10") renderCompareScene(container, ctx);
     else if (act.type === "A11") renderA11Ordinal(container, ctx);
     else if (act.type === "A12") renderA12Pattern(container, ctx);
     else if (act.type === "A13") renderA13ShapeOrPos(container, { topic: act.topic, lang: getLang(), t, onResult: handleResult, onSpeakText: ctx.onSpeakText });
     else if (act.type === "A14") renderA14MeasureTime(container, { topic: act.topic, lang: getLang(), t, onResult: handleResult, onSpeakText: ctx.onSpeakText });
+    else if (act.type === "A15") renderA15Neighbor(container, ctx);
+    else if (act.type === "A16") renderA16Bond(container, ctx);
     else renderA2(container, ctx);
   };
 

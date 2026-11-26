@@ -30,11 +30,12 @@ export function ordinalWords(n, lang = "vi") {
  * Convert a whole hour 1..12 to spoken words.
  * Japanese uses exceptions よじ (4), しちじ (7), くじ (9).
  */
-export function clockWords(hour, lang = "vi") {
+export function clockWords(hour, lang = "vi", half = false) {
   const h = Math.trunc(Number(hour));
   if (h < 1 || h > 12) {
     throw new RangeError(`clockWords supports 1..12, got ${hour}`);
   }
-  if (lang === "ja") return JA_HOURS[h];
-  return `${numberToWords(h, "vi")} giờ`;
+  if (lang === "ja") return half ? `${JA_HOURS[h]}はん` : JA_HOURS[h];
+  const base = `${numberToWords(h, "vi")} giờ`;
+  return half ? `${base} rưỡi` : base;
 }

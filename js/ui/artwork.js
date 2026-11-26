@@ -1,50 +1,76 @@
+const ANIMAL_FILES = [
+  "",
+  "assets/img/animals/rabbit.webp",
+  "assets/img/animals/bear.webp",
+  "assets/img/animals/cat.webp",
+  "assets/img/animals/fox.webp",
+  "assets/img/animals/elephant.webp",
+  "assets/img/animals/owl.webp",
+  "assets/img/animals/monkey.webp",
+  "assets/img/animals/penguin.webp",
+  "assets/img/animals/lion.webp"
+];
+
+const OBJECT_FILES = [
+  "",
+  "assets/img/objects/carrot.webp",
+  "assets/img/objects/apple.webp",
+  "assets/img/objects/fish.webp",
+  "assets/img/objects/ball.webp",
+  "assets/img/objects/balloon.webp",
+  "assets/img/objects/firefly.webp",
+  "assets/img/objects/banana.webp",
+  "assets/img/objects/candy.webp",
+  "assets/img/objects/lantern.webp"
+];
+
+const STAR_FILE = "assets/img/objects/star.webp";
+
+let preloaded = false;
+export function preloadArtwork() {
+  if (preloaded || typeof Image === "undefined") return;
+  preloaded = true;
+  const urls = [...ANIMAL_FILES.slice(1), ...OBJECT_FILES.slice(1), STAR_FILE];
+  for (const url of urls) {
+    const img = new Image();
+    img.src = url;
+  }
+}
+
+function fallbackSvg(kind, stage, size) {
+  if (kind === "star") {
+    return `<svg width="${size}" height="${size}" viewBox="0 0 80 80" aria-hidden="true"><polygon points="40,6 49,27 72,29 54,44 60,67 40,54 20,67 26,44 8,29 31,27" fill="#FFC83D" stroke="#2B2A4C" stroke-width="4" stroke-linejoin="round"/></svg>`;
+  }
+  const colors = ["", "#FFE08A", "#BFEFDD", "#CFE8FF", "#E3D7FF", "#FFD0E0", "#FFD9B3", "#D5F2B5", "#BDEBF2", "#E8EAF0"];
+  const bg = colors[stage] || "#FFE08A";
+  return `<svg width="${size}" height="${size}" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="28" fill="${bg}" stroke="#2B2A4C" stroke-width="4"/></svg>`;
+}
+
+if (typeof window !== "undefined") {
+  window.__mzImgFallback = (imgEl, kind, stage, size) => {
+    console.warn("[artwork] Missing image, using SVG fallback:", imgEl.getAttribute("src"));
+    const wrap = document.createElement("span");
+    wrap.innerHTML = fallbackSvg(kind, stage, size);
+    imgEl.replaceWith(wrap.firstElementChild);
+  };
+}
+
+function renderImg(src, kind, stage, size) {
+  return `<img src="${src}" width="${size}" height="${size}" alt="" aria-hidden="true" draggable="false" style="width:${size}px;height:${size}px;object-fit:contain;display:block;pointer-events:none;" onerror="window.__mzImgFallback && window.__mzImgFallback(this,'${kind}',${stage},${size})">`;
+}
+
 export function renderMascotStar(size = 64) {
-  return `<svg width="${size}" height="${size}" viewBox="0 0 80 80" aria-hidden="true">
-    <polygon points="40,6 49,27 72,29 54,44 60,67 40,54 20,67 26,44 8,29 31,27"
-      fill="#FFC83D" stroke="#2B2A4C" stroke-width="4" stroke-linejoin="round"/>
-    <circle cx="33" cy="38" r="3" fill="#2B2A4C"/>
-    <circle cx="47" cy="38" r="3" fill="#2B2A4C"/>
-    <path d="M34 46 Q40 52 46 46" fill="none" stroke="#2B2A4C" stroke-width="3" stroke-linecap="round"/>
-  </svg>`;
+  return renderImg(STAR_FILE, "star", 0, size);
 }
 
 export function renderAnimal(stage, size = 72) {
-  const colors = [
-    "", "#FFE08A", "#BFEFDD", "#CFE8FF", "#E3D7FF",
-    "#FFD0E0", "#FFD9B3", "#D5F2B5", "#BDEBF2", "#E8EAF0"
-  ];
-  const bg = colors[stage] || "#FFE08A";
-  const ears = stage === 1
-    ? `<ellipse cx="26" cy="18" rx="7" ry="16" fill="#fff" stroke="#2B2A4C" stroke-width="4"/><ellipse cx="54" cy="18" rx="7" ry="16" fill="#fff" stroke="#2B2A4C" stroke-width="4"/>`
-    : stage === 3 || stage === 4
-    ? `<polygon points="18,32 24,10 36,26" fill="${bg}" stroke="#2B2A4C" stroke-width="4"/><polygon points="62,32 56,10 44,26" fill="${bg}" stroke="#2B2A4C" stroke-width="4"/>`
-    : `<circle cx="22" cy="24" r="10" fill="${bg}" stroke="#2B2A4C" stroke-width="4"/><circle cx="58" cy="24" r="10" fill="${bg}" stroke="#2B2A4C" stroke-width="4"/>`;
-  return `<svg width="${size}" height="${size}" viewBox="0 0 80 80" aria-hidden="true">
-    ${ears}
-    <circle cx="40" cy="46" r="24" fill="${bg}" stroke="#2B2A4C" stroke-width="4"/>
-    <circle cx="32" cy="42" r="3.5" fill="#2B2A4C"/>
-    <circle cx="48" cy="42" r="3.5" fill="#2B2A4C"/>
-    <ellipse cx="40" cy="50" rx="5" ry="3.5" fill="#2B2A4C"/>
-    <path d="M33 56 Q40 62 47 56" fill="none" stroke="#2B2A4C" stroke-width="3" stroke-linecap="round"/>
-  </svg>`;
+  const src = ANIMAL_FILES[stage] || ANIMAL_FILES[1];
+  return renderImg(src, "animal", stage, size);
 }
 
 export function renderObject(stage, size = 56) {
-  if (stage === 7) {
-    return `<span style="font-size:${Math.round(size * 0.85)}px;line-height:1;display:inline-flex;align-items:center;justify-content:center" aria-hidden="true">🍌</span>`;
-  }
-  const shapes = {
-    1: `<path d="M40 16 C48 16 52 28 40 60 C28 28 32 16 40 16Z" fill="#FF8C42" stroke="#2B2A4C" stroke-width="4"/><path d="M35 16 L32 8 M40 16 L40 6 M45 16 L48 8" stroke="#18835F" stroke-width="4" stroke-linecap="round"/>`,
-    2: `<circle cx="40" cy="42" r="20" fill="#E85D4A" stroke="#2B2A4C" stroke-width="4"/><path d="M40 22 L42 12" stroke="#2B2A4C" stroke-width="4" stroke-linecap="round"/><ellipse cx="48" cy="16" rx="7" ry="4" fill="#18835F" stroke="#2B2A4C" stroke-width="3"/>`,
-    3: `<ellipse cx="38" cy="40" rx="20" ry="13" fill="#4DA8DA" stroke="#2B2A4C" stroke-width="4"/><polygon points="56,40 70,28 70,52" fill="#4DA8DA" stroke="#2B2A4C" stroke-width="4"/><circle cx="28" cy="37" r="3" fill="#2B2A4C"/>`,
-    4: `<circle cx="40" cy="40" r="22" fill="#FF9F43" stroke="#2B2A4C" stroke-width="4"/><path d="M22 30 Q40 42 58 30 M22 50 Q40 38 58 50" fill="none" stroke="#2B2A4C" stroke-width="3"/>`,
-    5: `<ellipse cx="40" cy="34" rx="18" ry="22" fill="#FF7EB6" stroke="#2B2A4C" stroke-width="4"/><path d="M40 56 Q36 66 42 74" fill="none" stroke="#2B2A4C" stroke-width="3" stroke-linecap="round"/>`,
-    6: `<circle cx="40" cy="42" r="14" fill="#FFC83D" stroke="#2B2A4C" stroke-width="4"/><ellipse cx="26" cy="32" rx="10" ry="6" fill="#CFE8FF" stroke="#2B2A4C" stroke-width="3"/><ellipse cx="54" cy="32" rx="10" ry="6" fill="#CFE8FF" stroke="#2B2A4C" stroke-width="3"/>`,
-    7: `<path d="M22 50 Q38 64 58 24 Q44 42 22 50Z" fill="#FFC83D" stroke="#2B2A4C" stroke-width="4" stroke-linejoin="round"/>`,
-    8: `<rect x="20" y="26" width="40" height="28" rx="14" fill="#6B4BC8" stroke="#2B2A4C" stroke-width="4"/><path d="M12 32 L20 40 L12 48 Z M68 32 L60 40 L68 48 Z" fill="#FFD0E0" stroke="#2B2A4C" stroke-width="3"/>`,
-    9: `<rect x="24" y="20" width="32" height="38" rx="12" fill="#FF8C42" stroke="#2B2A4C" stroke-width="4"/><line x1="24" y1="34" x2="56" y2="34" stroke="#2B2A4C" stroke-width="3"/><line x1="24" y1="46" x2="56" y2="46" stroke="#2B2A4C" stroke-width="3"/>`
-  };
-  return `<svg width="${size}" height="${size}" viewBox="0 0 80 80" aria-hidden="true">${shapes[stage] || shapes[1]}</svg>`;
+  const src = OBJECT_FILES[stage] || OBJECT_FILES[1];
+  return renderImg(src, "object", stage, size);
 }
 
 export function renderComparisonSign(sign, eyes = false, size = 96) {

@@ -21,6 +21,11 @@ const JA_HIKI = [
   "ろっぴき", "ななひき", "はっぴき", "きゅうひき", "じゅっぴき"
 ];
 
+const JA_HON = [
+  "", "いっぽん", "にほん", "さんぼん", "よんほん", "ごほん",
+  "ろっぽん", "ななほん", "はっぽん", "きゅうほん", "じゅっぽん"
+];
+
 /**
  * Convert an integer 0..100 to spoken words in Vietnamese or Japanese (hiragana).
  */
@@ -80,6 +85,13 @@ export function countWords(n, counter = "", lang = "vi") {
       const ones = num % 10;
       if (ones === 0) return `${numberToWords(tens * 10, "ja").slice(0, -4)}じゅっぴき`;
       return `${numberToWords(tens * 10, "ja")}${JA_HIKI[ones]}`;
+    }
+    if (counter === "hon") {
+      if (num <= 10) return JA_HON[num];
+      const tens = Math.floor(num / 10);
+      const ones = num % 10;
+      if (ones === 0) return `${numberToWords(tens * 10, "ja").slice(0, -4)}じゅっぽん`;
+      return `${numberToWords(tens * 10, "ja")}${JA_HON[ones]}`;
     }
     return numberToWords(num, "ja");
   }

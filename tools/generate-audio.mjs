@@ -35,9 +35,20 @@ function readJson(rel) {
 
 function collectTexts() {
   const items = { vi: new Set(), ja: new Set() };
+  const splitSentences = (text) => {
+    const clean = String(text || "").normalize("NFC").trim();
+    if (!clean) return [];
+    const parts = clean.match(/[^.!?。！？]+[.!?。！？]*/g);
+    if (!parts || parts.length <= 1) return [clean];
+    return parts.map((p) => p.trim()).filter(Boolean);
+  };
   const add = (lang, text) => {
     const clean = String(text || "").normalize("NFC").trim();
-    if (clean) items[lang].add(clean);
+    if (!clean) return;
+    items[lang].add(clean);
+    for (const part of splitSentences(clean)) {
+      items[lang].add(part);
+    }
   };
 
   // 1. Numbers 0..20 and tens 30..100
@@ -127,10 +138,76 @@ function collectTexts() {
     if (i18n[lang].ui?.tracePrompt) {
       for (let d = 0; d <= 9; d++) {
         add(lang, i18n[lang].ui.tracePrompt.replace("{n}", String(d)));
+        add(lang, i18n[lang].ui.tracePrompt.replace("{n}", numberToWords(d, lang)));
       }
     }
     for (const v of Object.values(i18n[lang].hint || {})) {
       add(lang, v);
+    }
+  }
+
+  // 8. A13 / A14 prompts (shapes, solids, positions, compareMeasure, measureUnits, daysSeasons)
+  for (const s of ["hình tròn", "hình vuông", "hình tam giác", "hình chữ nhật", "khối cầu", "khối trụ", "khối vuông", "khối chữ nhật"]) {
+    add("vi", i18n.vi.ui.shapePrompt.replace("{shape}", s));
+  }
+  for (const s of ["まる", "ましかく", "さんかく", "ながしかく", "たまの かたち", "つつの かたち", "さいころの かたち", "はこの かたち"]) {
+    add("ja", i18n.ja.ui.shapePrompt.replace("{shape}", s));
+  }
+  for (const p of ["trái", "phải", "trên", "dưới", "trước", "sau"]) {
+    add("vi", i18n.vi.ui.positionPrompt.replace("{pos}", p));
+  }
+  for (const p of ["ひだり", "みぎ", "うえ", "した", "まえ", "うしろ"]) {
+    add("ja", i18n.ja.ui.positionPrompt.replace("{pos}", p));
+  }
+  for (const p of [
+    "Chọn băng giấy dài hơn nhé!", "Chọn băng giấy ngắn hơn nhé!",
+    "Chọn tháp cao hơn nhé!", "Chọn tháp thấp hơn nhé!",
+    "Chọn quả nặng hơn nhé!", "Chọn quả nhẹ hơn nhé!",
+    "Đo chiều dài quyển sách bằng gì tiện nhất?",
+    "Đo chiều dài sân chơi bằng gì tiện nhất?",
+    "Đo xem cái cốc đựng được nhiều nước không bằng gì?",
+    "Mùa nào hoa nở rực rỡ và ấm áp?", "Mùa nào nắng ấm rực rỡ nhất?",
+    "Mùa nào lá vàng lá đỏ rơi nhiều?", "Mùa nào trời lạnh và có tuyết rơi?"
+  ]) add("vi", p);
+  for (const p of [
+    "ながい ほうを えらぼう！", "みじかい ほうを えらぼう！",
+    "たかい ほうを えらぼう！", "ひくい ほうを えらぼう！",
+    "おもい ほうを えらぼう！", "かるい ほうを えらぼう！",
+    "ほんの ながさを はかるのに どれがいいかな？",
+    "ひろばの ながさを はかるのに どれがいいかな？",
+    "みずの かさを はかるのに どれがいいかな？",
+    "おはなが さいて あたたかい きせつは どれ？", "おひさまが ぴかぴか あつい きせつは どれ？",
+    "あかい はっぱが おちる きせつは どれ？", "さむくて ゆきが ふる きせつは どれ？"
+  ]) add("ja", p);
+  for (const d of DAYS_OF_WEEK) {
+    add("vi", `Sau ${d.vi} là thứ mấy nhỉ?`);
+    add("ja", `${d.ja}の つぎは なにようびかな？`);
+  }
+
+  // 9. A4 finite sentence segments (chapters 1..8, counts 1..10)
+  for (const ch of story.chapters.slice(0, 8)) {
+    const counter = ch.object.counter === "hiki" ? "hiki" : "ko";
+    const cls = ch.object.classifier;
+    for (let n = 1; n <= 10; n++) {
+      const wVi = numberToWords(n, "vi");
+      const wJa = countWords(n, counter, "ja");
+      add("vi", `${ch.animal.vi} có ${wVi} ${cls} ${ch.object.vi}.`);
+      add("vi", `Cho bạn ${wVi} ${cls}.`);
+      add("vi", `Bạn cho thêm ${wVi} ${cls}.`);
+      add("vi", `Có tất cả ${wVi} ${cls} ${ch.object.vi}, thấy ${wVi} ${cls}.`);
+      add("vi", `Còn mấy ${cls}?`);
+      add("vi", `Tất cả có mấy ${cls}?`);
+      add("vi", `Còn thiếu mấy ${cls}?`);
+      add("vi", `Nhiều hơn mấy ${cls}?`);
+
+      add("ja", `${ch.animal.ja}は ${ch.object.ja}を ${wJa} もっています。`);
+      add("ja", `ともだちに ${wJa} あげました。`);
+      add("ja", `${wJa} もらいました。`);
+      add("ja", `${ch.object.ja}が ぜんぶで ${wJa} あります。`);
+      add("ja", `みえているのは ${wJa}。`);
+      add("ja", `のこりは いくつ？`);
+      add("ja", `ぜんぶで いくつ？`);
+      add("ja", `かくれているのは いくつ？`);
     }
   }
 

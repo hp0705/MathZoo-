@@ -1,7 +1,9 @@
 import { playCountNote } from "../audio/sfx.js";
+import { numberToWords } from "../core/number-words.js";
 
-export function renderTracing(container, { digit = 1, t, onComplete, onSpeakText }) {
+export function renderTracing(container, { digit = 1, lang = "vi", t, onComplete, onSpeakText }) {
   const prompt = t("ui.tracePrompt").replace("{n}", String(digit));
+  const promptSpeak = t("ui.tracePrompt").replace("{n}", numberToWords(digit, lang));
   container.innerHTML = `
     <div class="lesson-layout">
       <p class="prompt-text">${prompt}</p>
@@ -53,5 +55,5 @@ export function renderTracing(container, { digit = 1, t, onComplete, onSpeakText
   container.querySelector("#trace-done").addEventListener("click", () => {
     onComplete(true);
   });
-  if (onSpeakText) onSpeakText(prompt);
+  if (onSpeakText) onSpeakText(promptSpeak);
 }

@@ -60,8 +60,8 @@
  ],
  "wrong1": [
   {
-   "vi": "Sai rồi, bé {name} ơi. Cố gắng lên nào, làm lại một lần nữa nhé!",
-   "ja": "ちがうよ、{name}ちゃん。がんばって、もういっかい やってみよう！",
+   "vi": "Chưa đúng rồi, bé {name} ơi! Mình thử lại nhé!",
+   "ja": "おしいよ、{name}ちゃん。がんばって、もういっかい やってみよう！",
    "for": "any"
   },
   {
@@ -70,23 +70,23 @@
    "for": "any"
   },
   {
-   "vi": "Nhầm rồi, không sao đâu bé {name} ơi. Mình thử lần nữa nhé!",
+   "vi": "Nhầm một chút thôi, bé {name} ơi. Thử lần nữa nhé!",
    "ja": "まちがえちゃったね。だいじょうぶ、もういっかい！",
    "for": "any"
   },
   {
-   "vi": "Ồ, chưa đúng rồi! Bé {name} cố lên, làm lại nào!",
+   "vi": "Ồ, chưa đúng rồi! Bé {name} cố lên nào!",
    "ja": "あれれ、ちがうみたい！{name}ちゃん、もういちど やってみよう！",
    "for": "any"
   },
   {
-   "vi": "Không phải rồi. Bé {name} ơi, mình thử một lần nữa nhé!",
-   "ja": "ざんねん、ちがうよ。{name}ちゃん、もういっかい ためそうね！",
+   "vi": "Không phải rồi! Bé {name} ơi, mình thử lại nhé!",
+   "ja": "ざんねん、おしいよ。{name}ちゃん、もういっかい ためそうね！",
    "for": "any"
   },
   {
-   "vi": "Sai mất rồi! Nhưng bé {name} giỏi mà, thử lại nào!",
-   "ja": "まちがいだよ。でも {name}ちゃんなら できるよ、もういちど！",
+   "vi": "Nhầm mất rồi! Bé {name} nhìn kỹ rồi chọn lại nhé!",
+   "ja": "おしい！でも {name}ちゃんなら できるよ。よく みて もういちど！",
    "for": "any"
   }
  ],

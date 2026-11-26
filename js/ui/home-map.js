@@ -46,7 +46,7 @@ export function renderHomeMap(container, { lessons, storyData, progress, t, lang
     card.innerHTML = `
       <span class="stage-badge">${badgeText}</span>
       <div class="stage-head">
-        ${renderAnimal(stageNum, 56)}
+        <div class="stage-avatar">${renderAnimal(stageNum, 68)}</div>
         <div>
           <div class="stage-name">${ch.zone[lang]}</div>
           <div style="font-size:16px;opacity:0.85">${ch.animal[lang]}</div>

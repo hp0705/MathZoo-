@@ -5321,7 +5321,7 @@
         "vi": "Quảng trường Lễ hội (8)",
         "ja": "おまつりひろばの おたのしみ (8)"
       },
-      "storyBeat": "close",
+      "storyBeat": "mid",
       "activities": [
         {
           "type": "A14",
@@ -5380,6 +5380,178 @@
         }
       ],
       "optional": true
+    },
+    {
+      "id": "s9-l09",
+      "stage": 9,
+      "order": 9,
+      "title": {
+        "vi": "Quảng trường Lễ hội (9)",
+        "ja": "おまつりひろばの おたのしみ (9)"
+      },
+      "storyBeat": "mid",
+      "optional": true,
+      "activities": [
+        {
+          "type": "A15",
+          "topic": "neighbor",
+          "max": 10,
+          "showSymbols": false,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        },
+        {
+          "type": "A15",
+          "topic": "neighbor",
+          "max": 10,
+          "showSymbols": false,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        },
+        {
+          "type": "A16",
+          "topic": "bond",
+          "max": 6,
+          "showSymbols": false,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        },
+        {
+          "type": "A16",
+          "topic": "bond",
+          "max": 10,
+          "showSymbols": false,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        },
+        {
+          "type": "A15",
+          "topic": "neighbor",
+          "max": 20,
+          "showSymbols": false,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        },
+        {
+          "type": "A15",
+          "topic": "neighbor",
+          "max": 20,
+          "showSymbols": false,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        },
+        {
+          "type": "A16",
+          "topic": "bond",
+          "max": 10,
+          "showSymbols": false,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        },
+        {
+          "type": "A16",
+          "topic": "bond",
+          "max": 10,
+          "showSymbols": false,
+          "review": true,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s9-l10",
+      "stage": 9,
+      "order": 10,
+      "title": {
+        "vi": "Quảng trường Lễ hội (10)",
+        "ja": "おまつりひろばの おたのしみ (10)"
+      },
+      "storyBeat": "close",
+      "optional": true,
+      "activities": [
+        {
+          "type": "A14",
+          "topic": "clockHalf",
+          "max": 10,
+          "showSymbols": false,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        },
+        {
+          "type": "A14",
+          "topic": "clockHalf",
+          "max": 10,
+          "showSymbols": false,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        },
+        {
+          "type": "A13",
+          "topic": "position",
+          "max": 10,
+          "showSymbols": false,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        },
+        {
+          "type": "A12",
+          "topic": "pattern",
+          "max": 10,
+          "showSymbols": false,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        },
+        {
+          "type": "A14",
+          "topic": "clockHalf",
+          "max": 10,
+          "showSymbols": false,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        },
+        {
+          "type": "A13",
+          "topic": "position",
+          "max": 10,
+          "showSymbols": false,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        },
+        {
+          "type": "A12",
+          "topic": "pattern",
+          "max": 10,
+          "showSymbols": false,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        },
+        {
+          "type": "A14",
+          "topic": "clockHalf",
+          "max": 10,
+          "showSymbols": false,
+          "review": true,
+          "voiceIds": [
+            "story-plaza-01"
+          ]
+        }
+      ]
     }
   ]
 }

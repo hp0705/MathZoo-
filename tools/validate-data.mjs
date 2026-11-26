@@ -1,8 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const EXPECTED_COUNTS = [6, 10, 9, 10, 10, 10, 10, 9, 8];
-const STAGE_LIMITS = { 1: 5, 2: 10, 3: 5, 4: 10, 5: 20, 6: 100, 7: 10, 8: 100, 9: 10 };
+const EXPECTED_COUNTS = [6, 10, 9, 10, 10, 10, 10, 9, 10];
+const STAGE_LIMITS = { 1: 5, 2: 10, 3: 5, 4: 10, 5: 20, 6: 100, 7: 10, 8: 100, 9: 20 };
 
 export function validateAll(rootDir = process.cwd()) {
   const errors = [];
@@ -10,8 +10,8 @@ export function validateAll(rootDir = process.cwd()) {
   const voiceData = JSON.parse(fs.readFileSync(path.join(rootDir, "data/voice-manifest.json"), "utf8"));
 
   const lessons = lessonsData.lessons || [];
-  if (lessons.length !== 82) {
-    errors.push(`Expected 82 lessons, got ${lessons.length}`);
+  if (lessons.length !== 84) {
+    errors.push(`Expected 84 lessons, got ${lessons.length}`);
   }
 
   const byStage = new Map();
@@ -37,8 +37,8 @@ export function validateAll(rootDir = process.cwd()) {
       if (s !== 9 && "optional" in l) {
         errors.push(`${l.id}: non-stage-9 lesson must not have optional`);
       }
-      if (!Array.isArray(l.activities) || l.activities.length !== 6) {
-        errors.push(`${l.id}: must have exactly 6 activities`);
+      if (!Array.isArray(l.activities) || l.activities.length < 6) {
+        errors.push(`${l.id}: must have at least 6 activities`);
       }
       for (const act of l.activities || []) {
         if (act.max > STAGE_LIMITS[s]) {

@@ -3,6 +3,7 @@ import { getChapter } from "./core/story.js";
 import { unlockAudio, setMasterVolume } from "./audio/sfx.js";
 import { speakOne, cancelSpeech, waitForVoices, hasViVoice, setSpeechVolume } from "./audio/speak.js";
 import { renderHomeMap } from "./ui/home-map.js";
+import { preloadArtwork } from "./ui/artwork.js";
 import { renderStoryIntro } from "./ui/story-intro.js";
 import { startLessonRunner } from "./ui/lesson.js";
 import { renderReward } from "./ui/reward.js";
@@ -25,6 +26,7 @@ async function boot() {
 
   const i18n = { vi: viI18n, ja: jaI18n };
   let progress = loadProgress();
+  preloadArtwork();
   setMasterVolume(progress.settings.volume ?? 0.9);
   setSpeechVolume(progress.settings.volume ?? 0.9);
 

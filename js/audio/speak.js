@@ -251,17 +251,32 @@ async function speakSingle(text, lang, token) {
   }
 }
 
+function splitSentences(text) {
+  const clean = String(text || "").normalize("NFC").trim();
+  if (!clean) return [];
+  const parts = clean.match(/[^.!?。！？]+[.!?。！？]*/g);
+  if (!parts || parts.length <= 1) return [clean];
+  return parts.map((p) => p.trim()).filter(Boolean);
+}
+
 export async function speakSegments(segments) {
   cancelSpeech();
   const token = activeToken;
   await waitForVoices(400);
   await new Promise((r) => setTimeout(r, 40));
-  for (let i = 0; i < segments.length; i++) {
+  const expanded = [];
+  for (const seg of segments) {
+    const raw = seg.speak || seg.text;
+    for (const part of splitSentences(raw)) {
+      expanded.push({ text: part, lang: seg.lang });
+    }
+  }
+  for (let i = 0; i < expanded.length; i++) {
     if (token !== activeToken) return;
-    const seg = segments[i];
-    await speakSingle(seg.speak || seg.text, seg.lang, token);
-    if (i < segments.length - 1 && token === activeToken) {
-      await new Promise((r) => setTimeout(r, 240));
+    const seg = expanded[i];
+    await speakSingle(seg.text, seg.lang, token);
+    if (i < expanded.length - 1 && token === activeToken) {
+      await new Promise((r) => setTimeout(r, 280));
     }
   }
 }
