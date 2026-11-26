@@ -6,20 +6,16 @@ import edge_tts
 
 VOICE_MAP = {
     "vi": {"voice": "vi-VN-HoaiMyNeural"},
-    "ja": {"voice": "ja-JP-NanamiNeural", "rate": "-8%", "pitch": "+3Hz"},
+    "ja": {"voice": "ja-JP-NanamiNeural"},
 }
 
 
-async def synthesize_one(text: str, lang: str, out_path: str, retries: int = 3) -> bool:
+async def synthesize_one(text: str, lang: str, out_path: str, retries: int = 4) -> bool:
     cfg = VOICE_MAP.get(lang, VOICE_MAP["vi"])
     tmp_path = f"{out_path}.tmp"
     for attempt in range(retries):
         try:
-            kwargs = {}
-            if attempt == 0 and "rate" in cfg:
-                kwargs["rate"] = cfg["rate"]
-                kwargs["pitch"] = cfg["pitch"]
-            communicate = edge_tts.Communicate(text, cfg["voice"], **kwargs)
+            communicate = edge_tts.Communicate(text, cfg["voice"])
             await communicate.save(tmp_path)
             if os.path.exists(tmp_path) and os.path.getsize(tmp_path) > 0:
                 os.replace(tmp_path, out_path)
@@ -33,7 +29,7 @@ async def synthesize_one(text: str, lang: str, out_path: str, retries: int = 3) 
             if attempt == retries - 1:
                 print(f"[FAIL] ({lang}) {text}: {err}", file=sys.stderr, flush=True)
                 return False
-            await asyncio.sleep(0.8 * (attempt + 1))
+            await asyncio.sleep(1.0 * (attempt + 1))
     return False
 
 
@@ -53,7 +49,7 @@ async def run_batch(items: list[dict]) -> None:
             fail_count += 1
         if idx % 25 == 0:
             print(f"Progress: {idx}/{len(items)} (ok={ok_count}, failed={fail_count})", flush=True)
-        await asyncio.sleep(0.05)
+        await asyncio.sleep(0.08)
 
     print(f"Batch complete: ok={ok_count}, failed={fail_count}", flush=True)
 

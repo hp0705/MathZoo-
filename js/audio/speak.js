@@ -254,6 +254,7 @@ async function speakSingle(text, lang, token) {
 function splitSentences(text) {
   const clean = String(text || "").normalize("NFC").trim();
   if (!clean) return [];
+  if (clean.length <= 120) return [clean];
   const parts = clean.match(/[^.!?。！？]+[.!?。！？]*/g);
   if (!parts || parts.length <= 1) return [clean];
   return parts.map((p) => p.trim()).filter(Boolean);

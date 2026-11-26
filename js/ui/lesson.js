@@ -21,6 +21,59 @@ export function startLessonRunner(container, {
   const lastIdx = { vi: -1, ja: -1 };
   let locked = false;
 
+  // Require >1s hold on .choice-card / .sign-card to prevent accidental taps
+  if (!container.__mzHoldInstalled) {
+    container.__mzHoldInstalled = true;
+    let holdTimer = null;
+    let holdingBtn = null;
+    let allowBtn = null;
+
+    const clearHold = () => {
+      if (holdTimer) {
+        clearTimeout(holdTimer);
+        holdTimer = null;
+      }
+      if (holdingBtn) {
+        holdingBtn.classList.remove("is-holding");
+        holdingBtn = null;
+      }
+    };
+
+    container.addEventListener("pointerdown", (e) => {
+      const btn = e.target.closest(".choice-card, .sign-card");
+      if (!btn || btn.disabled) return;
+      clearHold();
+      holdingBtn = btn;
+      // Force reflow so CSS transition restarts cleanly
+      void btn.offsetWidth;
+      btn.classList.add("is-holding");
+      holdTimer = setTimeout(() => {
+        const target = holdingBtn;
+        clearHold();
+        if (target) {
+          allowBtn = target;
+          target.click();
+        }
+      }, 1000);
+    });
+
+    container.addEventListener("pointerup", clearHold);
+    container.addEventListener("pointerleave", clearHold);
+    container.addEventListener("pointercancel", clearHold);
+
+    container.addEventListener("click", (e) => {
+      const btn = e.target.closest(".choice-card, .sign-card");
+      if (!btn) return;
+      if (e.detail === 0) return; // allow keyboard Enter/Space
+      if (allowBtn === btn) {
+        allowBtn = null;
+        return;
+      }
+      e.stopImmediatePropagation();
+      e.preventDefault();
+    }, true);
+  }
+
   let bannerTimer = null;
   const showBanner = (msg) => {
     if (!msg) {

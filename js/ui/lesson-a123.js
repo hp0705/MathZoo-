@@ -133,11 +133,15 @@ export function renderA3(container, { stage, max, chapter, lang, t, onComplete, 
   };
   renderSides();
 
-  container.querySelector("#a3-add").addEventListener("click", () => {
+  const addBtn = container.querySelector("#a3-add");
+  addBtn.addEventListener("click", () => {
+    if (rightCount >= leftCount) return;
     rightCount++;
     playCountNote(rightCount);
     renderSides();
     if (rightCount === leftCount) {
+      addBtn.disabled = true;
+      addBtn.classList.add("is-disabled");
       const ansSpeech = lang === "ja"
         ? `${countWords(leftCount, chapter.object.counter, "ja")} ${chapter.object.ja} ですね！`
         : `${countWords(leftCount, chapter.object.classifier, "vi")} ${chapter.object.vi} đó!`;
