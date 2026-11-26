@@ -1,59 +1,66 @@
 import { renderObject } from "./artwork.js";
 import { generateProblem } from "../core/problem-gen.js";
 import { numberToWords, countWords } from "../core/number-words.js";
+import { sanitizeName } from "../core/phrases.js";
 import { playCountNote, playReceiveTing, playGiveWhoosh } from "../audio/sfx.js";
 
-function buildStoryText({ kind, a, b }, chapter, lang) {
+function buildStoryText({ kind, a, b }, chapter, lang, settings = {}) {
   const animal = chapter.animal[lang];
   const obj = chapter.object[lang];
   const cls = chapter.object.classifier;
+  const dispName = sanitizeName(lang === "ja" ? settings.nameJa : settings.nameVi, lang);
+  const spkName = (lang === "ja" ? settings.speakJa : settings.speakVi)?.trim() || dispName;
+
   if (lang === "ja") {
     const counter = chapter.object.counter === "hiki" ? "hiki" : "ko";
     const wA = countWords(a, counter, "ja");
     const wB = countWords(b, counter, "ja");
-    let line;
-    if (kind === "take") {
-      line = `${animal}は ${obj}を ${wA} もっています。ともだちに ${wB} あげました。のこりは いくつ？`;
-    } else if (kind === "missing") {
-      line = `${obj}が ぜんぶで ${wA} あります。みえているのは ${wB}。かくれているのは いくつ？`;
-    } else if (kind === "compare") {
-      line = `${wA}と ${wB}、ちがいは いくつ？`;
-    } else {
-      line = `${animal}は ${obj}を ${wA} もっています。${wB} もらいました。ぜんぶで いくつ？`;
-    }
-    return { text: line, speak: line };
+    const fmt = (name) => {
+      if (kind === "take") {
+        return `${animal}は ${obj}を ${wA} もっています。${name}ちゃんに ${wB} あげました。のこりは いくつ？`;
+      }
+      if (kind === "missing") {
+        return `${obj}が ぜんぶで ${wA} あります。${name}ちゃんに みえているのは ${wB}。かくれているのは いくつ？`;
+      }
+      if (kind === "compare") {
+        return `${animal}は ${wA}、${name}ちゃんは ${wB}。ちがいは いくつ？`;
+      }
+      return `${animal}は ${obj}を ${wA} もっています。${name}ちゃんが ${animal}に ${wB} あげました。ぜんぶで いくつ？`;
+    };
+    return { text: fmt(dispName), speak: fmt(spkName) };
   }
+
   const wA = numberToWords(a, "vi");
   const wB = numberToWords(b, "vi");
   if (kind === "take") {
     return {
-      text: `${animal} có ${a} ${cls} ${obj}. Cho bạn ${b} ${cls}. Còn mấy ${cls}?`,
-      speak: `${animal} có ${wA} ${cls} ${obj}. Cho bạn ${wB} ${cls}. Còn mấy ${cls}?`
+      text: `${animal} có ${a} ${cls} ${obj}. ${animal} cho bé ${dispName} ${b} ${cls}. Còn mấy ${cls}?`,
+      speak: `${animal} có ${wA} ${cls} ${obj}. ${animal} cho bé ${spkName} ${wB} ${cls}. Còn mấy ${cls}?`
     };
   }
   if (kind === "missing") {
     return {
-      text: `Có tất cả ${a} ${cls} ${obj}, thấy ${b} ${cls}. Còn thiếu mấy ${cls}?`,
-      speak: `Có tất cả ${wA} ${cls} ${obj}, thấy ${wB} ${cls}. Còn thiếu mấy ${cls}?`
+      text: `${animal} có tất cả ${a} ${cls} ${obj}, bé ${dispName} thấy ${b} ${cls}. Còn thiếu mấy ${cls}?`,
+      speak: `${animal} có tất cả ${wA} ${cls} ${obj}, bé ${spkName} thấy ${wB} ${cls}. Còn thiếu mấy ${cls}?`
     };
   }
   if (kind === "compare") {
     return {
-      text: `Một bên ${a} ${cls} ${obj}, một bên ${b} ${cls}. Nhiều hơn mấy ${cls}?`,
-      speak: `Một bên ${wA} ${cls} ${obj}, một bên ${wB} ${cls}. Nhiều hơn mấy ${cls}?`
+      text: `${animal} có ${a} ${cls} ${obj}, bé ${dispName} có ${b} ${cls}. ${animal} nhiều hơn mấy ${cls}?`,
+      speak: `${animal} có ${wA} ${cls} ${obj}, bé ${spkName} có ${wB} ${cls}. ${animal} nhiều hơn mấy ${cls}?`
     };
   }
   return {
-    text: `${animal} có ${a} ${cls} ${obj}. Bạn cho thêm ${b} ${cls}. Tất cả có mấy ${cls}?`,
-    speak: `${animal} có ${wA} ${cls} ${obj}. Bạn cho thêm ${wB} ${cls}. Tất cả có mấy ${cls}?`
+    text: `${animal} có ${a} ${cls} ${obj}. Bé ${dispName} cho ${animal} thêm ${b} ${cls}. Tất cả có mấy ${cls}?`,
+    speak: `${animal} có ${wA} ${cls} ${obj}. Bé ${spkName} cho ${animal} thêm ${wB} ${cls}. Tất cả có mấy ${cls}?`
   };
 }
 
-export function renderGiveReceive(container, { stage, activity, chapter, lang, onResult, onSpeakText }) {
+export function renderGiveReceive(container, { stage, activity, chapter, settings, lang, onResult, onSpeakText }) {
   const kind = activity.kind || "add";
   const cap = Math.min(20, activity.max || 10);
   const prob = generateProblem({ kind, max: cap, seed: (Date.now() & 0xffff) + stage });
-  const storyLine = buildStoryText(prob, chapter, lang);
+  const storyLine = buildStoryText(prob, chapter, lang, settings);
   const isTake = kind === "take";
   const opSym = isTake || kind === "compare" || kind === "missing" ? "−" : "+";
 

@@ -184,27 +184,29 @@ function collectTexts() {
     add("ja", `${d.ja}の つぎは なにようびかな？`);
   }
 
-  // 9. A4 finite sentence segments (chapters 1..8, counts 1..10)
+  // 9. A4 finite sentence segments (chapters 1..8, counts 1..10, default name Mây / マイ)
   for (const ch of story.chapters.slice(0, 8)) {
     const counter = ch.object.counter === "hiki" ? "hiki" : "ko";
     const cls = ch.object.classifier;
+    const nameVi = DEFAULT_SETTINGS.nameVi;
+    const nameJa = DEFAULT_SETTINGS.nameJa;
     for (let n = 1; n <= 10; n++) {
       const wVi = numberToWords(n, "vi");
       const wJa = countWords(n, counter, "ja");
       add("vi", `${ch.animal.vi} có ${wVi} ${cls} ${ch.object.vi}.`);
-      add("vi", `Cho bạn ${wVi} ${cls}.`);
-      add("vi", `Bạn cho thêm ${wVi} ${cls}.`);
-      add("vi", `Có tất cả ${wVi} ${cls} ${ch.object.vi}, thấy ${wVi} ${cls}.`);
+      add("vi", `${ch.animal.vi} cho bé ${nameVi} ${wVi} ${cls}.`);
+      add("vi", `Bé ${nameVi} cho ${ch.animal.vi} thêm ${wVi} ${cls}.`);
+      add("vi", `${ch.animal.vi} có tất cả ${wVi} ${cls} ${ch.object.vi}, bé ${nameVi} thấy ${wVi} ${cls}.`);
       add("vi", `Còn mấy ${cls}?`);
       add("vi", `Tất cả có mấy ${cls}?`);
       add("vi", `Còn thiếu mấy ${cls}?`);
-      add("vi", `Nhiều hơn mấy ${cls}?`);
+      add("vi", `${ch.animal.vi} nhiều hơn mấy ${cls}?`);
 
       add("ja", `${ch.animal.ja}は ${ch.object.ja}を ${wJa} もっています。`);
-      add("ja", `ともだちに ${wJa} あげました。`);
-      add("ja", `${wJa} もらいました。`);
+      add("ja", `${nameJa}ちゃんに ${wJa} あげました。`);
+      add("ja", `${nameJa}ちゃんが ${ch.animal.ja}に ${wJa} あげました。`);
       add("ja", `${ch.object.ja}が ぜんぶで ${wJa} あります。`);
-      add("ja", `みえているのは ${wJa}。`);
+      add("ja", `${nameJa}ちゃんに みえているのは ${wJa}。`);
       add("ja", `のこりは いくつ？`);
       add("ja", `ぜんぶで いくつ？`);
       add("ja", `かくれているのは いくつ？`);
