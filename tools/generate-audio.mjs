@@ -146,7 +146,32 @@ function collectTexts() {
     }
   }
 
-  // 8. A13 / A14 prompts (shapes, solids, positions, compareMeasure, measureUnits, daysSeasons)
+  // 8. A2 choosePrompt (all 9 chapters), A11 ordinalPrompt (1..10), A13 / A14 / A15 / A16 prompts
+  for (const ch of story.chapters) {
+    const objLabelVi = ch.object.classifier ? `${ch.object.classifier} ${ch.object.vi}` : ch.object.vi;
+    add("vi", i18n.vi.ui.choosePrompt.replace("{object}", objLabelVi));
+    add("ja", i18n.ja.ui.choosePrompt.replace("{object}", ch.object.ja));
+  }
+  for (let n = 1; n <= 10; n++) {
+    add("vi", i18n.vi.ui.ordinalPrompt.replace("{ord}", ordinalWords(n, "vi")));
+    add("ja", i18n.ja.ui.ordinalPrompt.replace("{ord}", ordinalWords(n, "ja")));
+  }
+  for (let c = 2; c <= 20; c++) {
+    const wVi = numberToWords(c, "vi");
+    const wJa = numberToWords(c, "ja");
+    add("vi", `Số liền trước của số ${wVi} là số nào?`);
+    add("vi", `Số liền sau của số ${wVi} là số nào?`);
+    add("ja", `${wJa}の ひとつまえの すうじは いくつ？`);
+    add("ja", `${wJa}の ひとつあとの すうじは いくつ？`);
+  }
+  for (let tot = 2; tot <= 10; tot++) {
+    const tVi = numberToWords(tot, "vi");
+    const tJa = numberToWords(tot, "ja");
+    for (let p = 1; p < tot; p++) {
+      add("vi", `${tVi} gồm ${numberToWords(p, "vi")} và mấy?`);
+      add("ja", `${tJa}は ${numberToWords(p, "ja")}と いくつ？`);
+    }
+  }
   for (const s of ["hình tròn", "hình vuông", "hình tam giác", "hình chữ nhật", "khối cầu", "khối trụ", "khối vuông", "khối chữ nhật"]) {
     add("vi", i18n.vi.ui.shapePrompt.replace("{shape}", s));
   }
