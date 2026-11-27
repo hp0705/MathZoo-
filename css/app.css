@@ -280,6 +280,24 @@ html, body {
   flex: 1; min-width: 0; min-height: 180px; background: var(--card-bg);
   border: var(--border-w) solid var(--stage-border); border-radius: var(--radius-card);
   padding: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+  position: relative; overflow: hidden; touch-action: manipulation;
+}
+.compare-side > * { position: relative; z-index: 1; }
+.compare-side::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--total);
+  opacity: 0.45;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0s linear;
+  pointer-events: none;
+  z-index: 0;
+}
+.compare-side.is-holding::before {
+  transform: scaleX(1);
+  transition: transform 1s linear;
 }
 .plate-round {
   width: min(230px, 42vw); height: min(230px, 42vw);

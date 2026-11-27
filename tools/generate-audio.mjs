@@ -185,6 +185,7 @@ function collectTexts() {
     add("ja", i18n.ja.ui.positionPrompt.replace("{pos}", p));
   }
   for (const p of [
+    "Nhầm rồi! Bên này nhiều hơn, giữ bên ít hơn nhé!",
     "Chọn băng giấy dài hơn nhé!", "Chọn băng giấy ngắn hơn nhé!",
     "Chọn tháp cao hơn nhé!", "Chọn tháp thấp hơn nhé!",
     "Chọn quả nặng hơn nhé!", "Chọn quả nhẹ hơn nhé!",
@@ -195,6 +196,7 @@ function collectTexts() {
     "Mùa nào lá vàng lá đỏ rơi nhiều?", "Mùa nào trời lạnh và có tuyết rơi?"
   ]) add("vi", p);
   for (const p of [
+    "こっちは おおいよ、すくない ほうを ながおししてね！",
     "ながい ほうを えらぼう！", "みじかい ほうを えらぼう！",
     "たかい ほうを えらぼう！", "ひくい ほうを えらぼう！",
     "おもい ほうを えらぼう！", "かるい ほうを えらぼう！",

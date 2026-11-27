@@ -1,7 +1,16 @@
 import { renderObject } from "./artwork.js";
 import { generateProblem } from "../core/problem-gen.js";
 import { numberToWords, countWords } from "../core/number-words.js";
-import { playCountNote } from "../audio/sfx.js";
+import { playCountNote, playWrongBoing } from "../audio/sfx.js";
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 export function renderA1(container, { stage, max, chapter, lang, t, onComplete, onSpeakText }) {
   const count = 1 + (Math.floor(Math.random() * max));
@@ -58,7 +67,7 @@ export function renderA2(container, { stage, max, chapter, lang, t, onResult, on
     const cand = 1 + Math.floor(Math.random() * Math.max(3, cap));
     if (!choices.includes(cand)) choices.push(cand);
   }
-  choices.sort((a, b) => a - b);
+  const shuffledChoices = shuffle(choices);
 
   const objLabel = lang === "vi" && chapter.object.classifier
     ? `${chapter.object.classifier} ${chapter.object.vi}`
@@ -86,7 +95,7 @@ export function renderA2(container, { stage, max, chapter, lang, t, onResult, on
   }
 
   const row = container.querySelector("#a2-choices");
-  choices.forEach((val) => {
+  shuffledChoices.forEach((val) => {
     const btn = document.createElement("button");
     btn.className = "choice-card";
     btn.textContent = String(val);
@@ -109,43 +118,81 @@ export function renderA2(container, { stage, max, chapter, lang, t, onResult, on
 }
 
 export function renderA3(container, { stage, max, chapter, lang, t, onComplete, onSpeakText }) {
-  const leftCount = 1 + Math.floor(Math.random() * Math.max(1, Math.min(5, max)));
-  let rightCount = Math.max(0, leftCount - (1 + Math.floor(Math.random() * Math.min(2, leftCount))));
+  const bigCount = 1 + Math.floor(Math.random() * Math.max(1, Math.min(5, max)));
+  const smallCount = Math.max(0, bigCount - (1 + Math.floor(Math.random() * Math.min(2, bigCount))));
+  const fewerOnLeft = Math.random() < 0.5;
+  let leftCount = fewerOnLeft ? smallCount : bigCount;
+  let rightCount = fewerOnLeft ? bigCount : smallCount;
   const prompt = t("ui.dragEqualPrompt");
 
   container.innerHTML = `
     <div class="lesson-layout">
       <p class="prompt-text">${prompt}</p>
       <div class="compare-arena">
-        <div class="compare-side" id="a3-left"></div>
-        <div class="compare-side" id="a3-right"></div>
+        <button class="compare-side" id="a3-left" style="cursor:pointer"></button>
+        <button class="compare-side" id="a3-right" style="cursor:pointer"></button>
       </div>
-      <button id="a3-add" class="btn-pill btn-primary">+1</button>
     </div>
   `;
   if (onSpeakText) onSpeakText(prompt);
 
+  const leftEl = container.querySelector("#a3-left");
+  const rightEl = container.querySelector("#a3-right");
+
   const renderSides = () => {
-    const left = container.querySelector("#a3-left");
-    const right = container.querySelector("#a3-right");
-    left.innerHTML = `<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">${Array.from({ length: leftCount }, () => renderObject(stage, 48)).join("")}</div>`;
-    right.innerHTML = `<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">${Array.from({ length: rightCount }, () => renderObject(stage, 48)).join("")}</div>`;
+    leftEl.innerHTML = `<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">${Array.from({ length: leftCount }, () => renderObject(stage, 48)).join("")}</div>`;
+    rightEl.innerHTML = `<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">${Array.from({ length: rightCount }, () => renderObject(stage, 48)).join("")}</div>`;
   };
   renderSides();
 
-  const addBtn = container.querySelector("#a3-add");
-  addBtn.addEventListener("click", () => {
-    if (rightCount >= leftCount) return;
-    rightCount++;
-    playCountNote(rightCount);
-    renderSides();
-    if (rightCount === leftCount) {
-      addBtn.disabled = true;
-      addBtn.classList.add("is-disabled");
-      const ansSpeech = lang === "ja"
-        ? `${countWords(leftCount, chapter.object.counter, "ja")} ${chapter.object.ja} ですね！`
-        : `${countWords(leftCount, chapter.object.classifier, "vi")} ${chapter.object.vi} đó!`;
-      setTimeout(() => onComplete(true, ansSpeech), 450);
-    }
-  });
+  let done = false;
+  const setupSide = (el, isLeft) => {
+    let holdTimer = null;
+    const clear = () => {
+      if (holdTimer) {
+        clearTimeout(holdTimer);
+        holdTimer = null;
+      }
+      el.classList.remove("is-holding");
+    };
+    el.addEventListener("pointerdown", () => {
+      if (done || leftCount === rightCount) return;
+      const isFewer = isLeft ? leftCount < rightCount : rightCount < leftCount;
+      if (!isFewer) {
+        playWrongBoing();
+        el.classList.add("is-wrong");
+        setTimeout(() => el.classList.remove("is-wrong"), 450);
+        if (onSpeakText) {
+          onSpeakText(lang === "ja" ? "こっちは おおいよ、すくない ほうを ながおししてね！" : "Nhầm rồi! Bên này nhiều hơn, giữ bên ít hơn nhé!");
+        }
+        return;
+      }
+      clear();
+      void el.offsetWidth;
+      el.classList.add("is-holding");
+      holdTimer = setTimeout(() => {
+        clear();
+        if (done || leftCount === rightCount) return;
+        if (isLeft) leftCount++;
+        else rightCount++;
+        playCountNote(Math.max(leftCount, rightCount));
+        renderSides();
+        if (leftCount === rightCount) {
+          done = true;
+          leftEl.disabled = true;
+          rightEl.disabled = true;
+          const ansSpeech = lang === "ja"
+            ? `${countWords(leftCount, chapter.object.counter, "ja")} ${chapter.object.ja} ですね！`
+            : `${countWords(leftCount, chapter.object.classifier, "vi")} ${chapter.object.vi} đó!`;
+          setTimeout(() => onComplete(true, ansSpeech), 450);
+        }
+      }, 1000);
+    });
+    el.addEventListener("pointerup", clear);
+    el.addEventListener("pointerleave", clear);
+    el.addEventListener("pointercancel", clear);
+  };
+
+  setupSide(leftEl, true);
+  setupSide(rightEl, false);
 }

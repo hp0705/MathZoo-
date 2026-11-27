@@ -83,7 +83,7 @@ export function renderA7Match(container, { stage, max, chapter, lang, t, onResul
     const c = 1 + Math.floor(Math.random() * Math.min(10, max));
     if (!counts.includes(c)) counts.push(c);
   }
-  counts.sort((a, b) => a - b);
+  const shuffledCounts = shuffleChoices(counts);
   const prompt = t("ui.matchPrompt");
 
   container.innerHTML = `
@@ -95,7 +95,7 @@ export function renderA7Match(container, { stage, max, chapter, lang, t, onResul
   `;
   if (onSpeakText) onSpeakText(prompt);
   const row = container.querySelector("#a7-groups");
-  counts.forEach((cnt) => {
+  shuffledCounts.forEach((cnt) => {
     const card = document.createElement("button");
     card.className = "choice-card";
     card.style.cssText = "min-width:180px;flex-wrap:wrap;padding:14px;gap:6px";
@@ -130,7 +130,7 @@ export function renderA9Board(container, { max, lang, t, onResult, onSpeakText }
     if (answer - delta >= 1) choiceSet.add(answer - delta);
     if (choiceSet.size < 3 && answer + delta <= cap) choiceSet.add(answer + delta);
   }
-  const choices = [...choiceSet].sort((a, b) => a - b);
+  const choices = shuffleChoices([...choiceSet]);
   const prompt = t("ui.boardPrompt");
 
   container.innerHTML = `
