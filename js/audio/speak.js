@@ -254,7 +254,6 @@ async function speakSingle(text, lang, token) {
 function splitSentences(text) {
   const clean = String(text || "").normalize("NFC").trim();
   if (!clean) return [];
-  if (clean.length <= 120) return [clean];
   const parts = clean.match(/[^.!?。！？]+[.!?。！？]*/g);
   if (!parts || parts.length <= 1) return [clean];
   return parts.map((p) => p.trim()).filter(Boolean);
@@ -265,11 +264,28 @@ export async function speakSegments(segments) {
   const token = activeToken;
   await waitForVoices(400);
   await new Promise((r) => setTimeout(r, 40));
+  const sets = await loadManifest();
   const expanded = [];
   for (const seg of segments) {
-    const raw = seg.speak || seg.text;
-    for (const part of splitSentences(raw)) {
-      expanded.push({ text: part, lang: seg.lang });
+    const raw = String(seg.speak || seg.text || "").normalize("NFC").trim();
+    if (!raw) continue;
+    const langCode = seg.lang === "ja" ? "ja" : "vi";
+    const fullHash = hashTtsKey(langCode, raw);
+    if (sets && sets[langCode]?.has(fullHash)) {
+      expanded.push({ text: raw, lang: langCode });
+      continue;
+    }
+    const parts = splitSentences(raw);
+    if (parts.length > 1 && sets && parts.every((p) => sets[langCode]?.has(hashTtsKey(langCode, p)))) {
+      for (const part of parts) {
+        expanded.push({ text: part, lang: langCode });
+      }
+    } else if (raw.length > 120 && parts.length > 1) {
+      for (const part of parts) {
+        expanded.push({ text: part, lang: langCode });
+      }
+    } else {
+      expanded.push({ text: raw, lang: langCode });
     }
   }
   for (let i = 0; i < expanded.length; i++) {
@@ -277,7 +293,7 @@ export async function speakSegments(segments) {
     const seg = expanded[i];
     await speakSingle(seg.text, seg.lang, token);
     if (i < expanded.length - 1 && token === activeToken) {
-      await new Promise((r) => setTimeout(r, 280));
+      await new Promise((r) => setTimeout(r, 80));
     }
   }
 }

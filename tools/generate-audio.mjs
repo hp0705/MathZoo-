@@ -4,6 +4,7 @@ import { spawn } from "node:child_process";
 import { hashTtsKey } from "../js/audio/tts-hash.js";
 import { numberToWords, countWords } from "../js/core/number-words.js";
 import { ordinalWords, clockWords } from "../js/core/ordinal-time.js";
+import { compareSentence } from "../js/core/compare.js";
 
 const DAYS_OF_WEEK = [
   { vi: "Thứ Hai", ja: "げつようび" },
@@ -82,8 +83,10 @@ function collectTexts() {
     add("ja", s.ja);
   }
   for (let h = 1; h <= 12; h++) {
-    add("vi", clockWords(h, "vi"));
-    add("ja", clockWords(h, "ja"));
+    add("vi", clockWords(h, "vi", false));
+    add("ja", clockWords(h, "ja", false));
+    add("vi", clockWords(h, "vi", true));
+    add("ja", clockWords(h, "ja", true));
   }
 
   // 4. Voice manifest
@@ -221,9 +224,11 @@ function collectTexts() {
       const wVi = numberToWords(n, "vi");
       const wJa = countWords(n, counter, "ja");
       add("vi", `${ch.animal.vi} có ${wVi} ${cls} ${ch.object.vi}.`);
+      add("vi", `${ch.animal.vi} có tất cả ${wVi} ${cls} ${ch.object.vi}.`);
       add("vi", `${ch.animal.vi} cho bé ${nameVi} ${wVi} ${cls}.`);
       add("vi", `Bé ${nameVi} cho ${ch.animal.vi} thêm ${wVi} ${cls}.`);
-      add("vi", `${ch.animal.vi} có tất cả ${wVi} ${cls} ${ch.object.vi}, bé ${nameVi} thấy ${wVi} ${cls}.`);
+      add("vi", `Bé ${nameVi} thấy ${wVi} ${cls}.`);
+      add("vi", `Bé ${nameVi} có ${wVi} ${cls}.`);
       add("vi", `Còn mấy ${cls}?`);
       add("vi", `Tất cả có mấy ${cls}?`);
       add("vi", `Còn thiếu mấy ${cls}?`);
@@ -234,9 +239,29 @@ function collectTexts() {
       add("ja", `${nameJa}ちゃんが ${ch.animal.ja}に ${wJa} あげました。`);
       add("ja", `${ch.object.ja}が ぜんぶで ${wJa} あります。`);
       add("ja", `${nameJa}ちゃんに みえているのは ${wJa}。`);
+      add("ja", `${ch.animal.ja}は ${wJa}。`);
+      add("ja", `${nameJa}ちゃんは ${wJa}。`);
       add("ja", `のこりは いくつ？`);
       add("ja", `ぜんぶで いくつ？`);
       add("ja", `かくれているのは いくつ？`);
+      add("ja", `ちがいは いくつ？`);
+    }
+  }
+
+  // 10. Answer confirmation speech (A1, A2, A3, A5, A6, A7) for all 9 chapters
+  for (const ch of story.chapters) {
+    const max = ch.stage === 6 || ch.stage === 8 ? 20 : 10;
+    for (let n = 1; n <= max; n++) {
+      add("vi", `${countWords(n, ch.object.classifier, "vi")} ${ch.object.vi} đó!`);
+      add("ja", `${countWords(n, ch.object.counter, "ja")} ${ch.object.ja} ですね！`);
+    }
+  }
+
+  // 11. A10 comparison sentences (0..10 x 0..10)
+  for (let a = 0; a <= 10; a++) {
+    for (let b = 0; b <= 10; b++) {
+      add("vi", compareSentence(a, b, "vi", "number"));
+      add("ja", compareSentence(a, b, "ja", "number"));
     }
   }
 

@@ -23,7 +23,7 @@ function buildStoryText({ kind, a, b }, chapter, lang, settings = {}) {
         return `${obj}が ぜんぶで ${wA} あります。${name}ちゃんに みえているのは ${wB}。かくれているのは いくつ？`;
       }
       if (kind === "compare") {
-        return `${animal}は ${wA}、${name}ちゃんは ${wB}。ちがいは いくつ？`;
+        return `${animal}は ${wA}。${name}ちゃんは ${wB}。ちがいは いくつ？`;
       }
       return `${animal}は ${obj}を ${wA} もっています。${name}ちゃんが ${animal}に ${wB} あげました。ぜんぶで いくつ？`;
     };
@@ -40,14 +40,14 @@ function buildStoryText({ kind, a, b }, chapter, lang, settings = {}) {
   }
   if (kind === "missing") {
     return {
-      text: `${animal} có tất cả ${a} ${cls} ${obj}, bé ${dispName} thấy ${b} ${cls}. Còn thiếu mấy ${cls}?`,
-      speak: `${animal} có tất cả ${wA} ${cls} ${obj}, bé ${spkName} thấy ${wB} ${cls}. Còn thiếu mấy ${cls}?`
+      text: `${animal} có tất cả ${a} ${cls} ${obj}. Bé ${dispName} thấy ${b} ${cls}. Còn thiếu mấy ${cls}?`,
+      speak: `${animal} có tất cả ${wA} ${cls} ${obj}. Bé ${spkName} thấy ${wB} ${cls}. Còn thiếu mấy ${cls}?`
     };
   }
   if (kind === "compare") {
     return {
-      text: `${animal} có ${a} ${cls} ${obj}, bé ${dispName} có ${b} ${cls}. ${animal} nhiều hơn mấy ${cls}?`,
-      speak: `${animal} có ${wA} ${cls} ${obj}, bé ${spkName} có ${wB} ${cls}. ${animal} nhiều hơn mấy ${cls}?`
+      text: `${animal} có ${a} ${cls} ${obj}. Bé ${dispName} có ${b} ${cls}. ${animal} nhiều hơn mấy ${cls}?`,
+      speak: `${animal} có ${wA} ${cls} ${obj}. Bé ${spkName} có ${wB} ${cls}. ${animal} nhiều hơn mấy ${cls}?`
     };
   }
   return {
