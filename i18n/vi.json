@@ -26,6 +26,8 @@
     "tenFramePrompt": "Xếp đủ vào khung mười nhé!",
     "matchPrompt": "Nối số với nhóm đúng nhé!",
     "tracePrompt": "Tô theo nét số {n} nhé!",
+    "traceStudioTitle": "Tập viết số 1 đến 20",
+    "traceBtn": "✏️ Tập viết số 1–20",
     "boardPrompt": "Điền số còn thiếu vào bảng nhé!",
     "compareSignPrompt": "Chọn dấu đúng đặt vào giữa nhé!",
     "ordinalPrompt": "Bạn nào đứng ở vị trí {ord}?",

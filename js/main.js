@@ -7,6 +7,7 @@ import { preloadArtwork } from "./ui/artwork.js";
 import { renderStoryIntro } from "./ui/story-intro.js";
 import { startLessonRunner } from "./ui/lesson.js";
 import { renderReward } from "./ui/reward.js";
+import { renderTracingStudio } from "./ui/tracing.js";
 import { openStickerBook } from "./ui/sticker-book.js";
 import { openParentModal } from "./ui/parent.js";
 
@@ -75,7 +76,27 @@ async function boot() {
       progress,
       t,
       lang: progress.settings.lang,
-      onSelectLesson: openLessonIntro
+      onSelectLesson: openLessonIntro,
+      onOpenTracing: openTracingStudio
+    });
+  };
+
+  const openTracingStudio = () => {
+    cancelSpeech();
+    appEl.dataset.stage = "1";
+    btnBack.hidden = false;
+    btnReplay.hidden = false;
+    btnLang.hidden = true;
+    topProgress.hidden = true;
+    bannerEl.hidden = true;
+    const lang = progress.settings.lang === "ja" ? "ja" : "vi";
+    renderTracingStudio(screenEl, {
+      lang,
+      t,
+      onSpeakText: (text) => {
+        lastSpoken = { speak: text, text, lang };
+        speakOne(text, lang);
+      }
     });
   };
 

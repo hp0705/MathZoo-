@@ -14,7 +14,7 @@ export function renderCompareScene(container, { stage, activity, settings, lang,
 
   const prob = variant === "c"
     ? generateSignExprSet({ count: 10, max: Math.min(10, activity.max || 10), seed })[0]
-    : generateSignSet({ count: 10, max: activity.max || 10, allowEqual: activity.allowEqual !== false, seed })[0];
+    : generateSignSet({ count: 10, max: activity.max || 10, allowEqual: activity.allowEqual !== false, focusSign: activity.focusSign || null, seed })[0];
 
   const valA = evalSide(prob.a);
   const valB = evalSide(prob.b);

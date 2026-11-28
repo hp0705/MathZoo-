@@ -9,8 +9,8 @@
       "A3": 24,
       "A8": 15,
       "A11": 21,
-      "A4": 148,
-      "A5": 28,
+      "A4": 162,
+      "A5": 14,
       "A6": 18,
       "A10": 24,
       "A9": 34,
@@ -1385,7 +1385,7 @@
       "level": "s3-l01",
       "order": 1,
       "optional": false,
-      "skill": "A4+A5+A3+A2 (add,take)",
+      "skill": "A4+A5+A3+A2 (add,combine)",
       "activityTypes": [
         "A4",
         "A5",
@@ -1427,11 +1427,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 5,
           "showSymbols": false,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -1470,7 +1470,7 @@
       "level": "s3-l02",
       "order": 2,
       "optional": false,
-      "skill": "A4+A5+A3+A2 (add,take)",
+      "skill": "A4+A5+A3+A2 (add,combine)",
       "activityTypes": [
         "A4",
         "A5",
@@ -1512,11 +1512,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 5,
           "showSymbols": false,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -1529,7 +1529,7 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "add",
           "max": 5,
           "showSymbols": false,
           "voiceIds": [
@@ -1555,7 +1555,7 @@
       "level": "s3-l03",
       "order": 3,
       "optional": false,
-      "skill": "A4+A5+A3+A2 (add,take)",
+      "skill": "A4+A5+A3+A2 (add,combine)",
       "activityTypes": [
         "A4",
         "A5",
@@ -1597,11 +1597,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 5,
           "showSymbols": false,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -1640,7 +1640,7 @@
       "level": "s3-l04",
       "order": 4,
       "optional": false,
-      "skill": "A4+A5+A3+A2 (add,take)",
+      "skill": "A4+A5+A3+A2 (add,combine)",
       "activityTypes": [
         "A4",
         "A5",
@@ -1682,11 +1682,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 5,
           "showSymbols": false,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -1699,7 +1699,7 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "add",
           "max": 5,
           "showSymbols": false,
           "voiceIds": [
@@ -1725,7 +1725,7 @@
       "level": "s3-l05",
       "order": 5,
       "optional": false,
-      "skill": "A4+A5+A3+A2 (add,take)",
+      "skill": "A4+A5+A3+A2 (add,combine)",
       "activityTypes": [
         "A4",
         "A5",
@@ -1767,11 +1767,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 5,
           "showSymbols": false,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -1810,7 +1810,7 @@
       "level": "s3-l06",
       "order": 6,
       "optional": false,
-      "skill": "A4+A5+A3+A2 (add,take)",
+      "skill": "A4+A5+A3+A2 (add,combine)",
       "activityTypes": [
         "A4",
         "A5",
@@ -1852,11 +1852,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 5,
           "showSymbols": false,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -1869,7 +1869,7 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "add",
           "max": 5,
           "showSymbols": false,
           "voiceIds": [
@@ -1895,7 +1895,7 @@
       "level": "s3-l07",
       "order": 7,
       "optional": false,
-      "skill": "A4+A5+A3+A2 (add,take)",
+      "skill": "A4+A5+A3+A2 (add,combine)",
       "activityTypes": [
         "A4",
         "A5",
@@ -1937,11 +1937,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 5,
           "showSymbols": false,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -1980,7 +1980,7 @@
       "level": "s3-l08",
       "order": 8,
       "optional": false,
-      "skill": "A4+A5+A3+A2 (add,take)",
+      "skill": "A4+A5+A3+A2 (add,combine)",
       "activityTypes": [
         "A4",
         "A5",
@@ -2022,11 +2022,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 5,
           "showSymbols": false,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -2039,7 +2039,7 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "add",
           "max": 5,
           "showSymbols": false,
           "voiceIds": [
@@ -2065,7 +2065,7 @@
       "level": "s3-l09",
       "order": 9,
       "optional": false,
-      "skill": "A4+A5+A3+A2 (add,take)",
+      "skill": "A4+A5+A3+A2 (add,combine)",
       "activityTypes": [
         "A4",
         "A5",
@@ -2107,11 +2107,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 5,
           "showSymbols": false,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -2150,11 +2150,10 @@
       "level": "s4-l01",
       "order": 1,
       "optional": false,
-      "skill": "A6+A4+A5+A2 (add,take,missing)",
+      "skill": "A6+A4+A2 (take,missing,compare)",
       "activityTypes": [
         "A6",
         "A4",
-        "A5",
         "A2"
       ],
       "numberRange": [
@@ -2183,23 +2182,6 @@
         },
         {
           "type": "A4",
-          "kind": "add",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A5",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A4",
           "kind": "take",
           "max": 10,
           "showSymbols": true,
@@ -2213,7 +2195,25 @@
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "take",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "compare",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-cmp-01"
           ]
         },
         {
@@ -2223,7 +2223,7 @@
           "review": true,
           "count": 2,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         }
       ]
@@ -2235,11 +2235,10 @@
       "level": "s4-l02",
       "order": 2,
       "optional": false,
-      "skill": "A6+A4+A5+A2 (add,take,missing)",
+      "skill": "A6+A4+A2 (take,missing,compare)",
       "activityTypes": [
         "A6",
         "A4",
-        "A5",
         "A2"
       ],
       "numberRange": [
@@ -2268,23 +2267,6 @@
         },
         {
           "type": "A4",
-          "kind": "add",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A5",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A4",
           "kind": "take",
           "max": 10,
           "showSymbols": true,
@@ -2298,7 +2280,25 @@
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "take",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "compare",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-cmp-01"
           ]
         },
         {
@@ -2308,7 +2308,7 @@
           "review": true,
           "count": 2,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         }
       ]
@@ -2320,11 +2320,10 @@
       "level": "s4-l03",
       "order": 3,
       "optional": false,
-      "skill": "A6+A4+A5+A2 (add,take,missing)",
+      "skill": "A6+A4+A2 (take,missing,compare)",
       "activityTypes": [
         "A6",
         "A4",
-        "A5",
         "A2"
       ],
       "numberRange": [
@@ -2353,23 +2352,6 @@
         },
         {
           "type": "A4",
-          "kind": "add",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A5",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A4",
           "kind": "take",
           "max": 10,
           "showSymbols": true,
@@ -2383,7 +2365,25 @@
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "take",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "compare",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-cmp-01"
           ]
         },
         {
@@ -2393,7 +2393,7 @@
           "review": true,
           "count": 2,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         }
       ]
@@ -2405,11 +2405,10 @@
       "level": "s4-l04",
       "order": 4,
       "optional": false,
-      "skill": "A6+A4+A5+A2 (add,take,missing)",
+      "skill": "A6+A4+A2 (take,missing,compare)",
       "activityTypes": [
         "A6",
         "A4",
-        "A5",
         "A2"
       ],
       "numberRange": [
@@ -2438,23 +2437,6 @@
         },
         {
           "type": "A4",
-          "kind": "add",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A5",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A4",
           "kind": "take",
           "max": 10,
           "showSymbols": true,
@@ -2468,7 +2450,25 @@
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "take",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "compare",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-cmp-01"
           ]
         },
         {
@@ -2478,7 +2478,7 @@
           "review": true,
           "count": 2,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         }
       ]
@@ -2490,11 +2490,10 @@
       "level": "s4-l05",
       "order": 5,
       "optional": false,
-      "skill": "A6+A4+A5+A2 (add,take,missing)",
+      "skill": "A6+A4+A2 (take,missing,compare)",
       "activityTypes": [
         "A6",
         "A4",
-        "A5",
         "A2"
       ],
       "numberRange": [
@@ -2523,23 +2522,6 @@
         },
         {
           "type": "A4",
-          "kind": "add",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A5",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A4",
           "kind": "take",
           "max": 10,
           "showSymbols": true,
@@ -2553,7 +2535,25 @@
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "take",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "compare",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-cmp-01"
           ]
         },
         {
@@ -2563,7 +2563,7 @@
           "review": true,
           "count": 2,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         }
       ]
@@ -2575,11 +2575,10 @@
       "level": "s4-l06",
       "order": 6,
       "optional": false,
-      "skill": "A6+A4+A5+A2 (add,take,missing)",
+      "skill": "A6+A4+A2 (take,missing,compare)",
       "activityTypes": [
         "A6",
         "A4",
-        "A5",
         "A2"
       ],
       "numberRange": [
@@ -2608,23 +2607,6 @@
         },
         {
           "type": "A4",
-          "kind": "add",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A5",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A4",
           "kind": "take",
           "max": 10,
           "showSymbols": true,
@@ -2638,7 +2620,25 @@
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "take",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "compare",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-cmp-01"
           ]
         },
         {
@@ -2648,7 +2648,7 @@
           "review": true,
           "count": 2,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         }
       ]
@@ -2660,11 +2660,10 @@
       "level": "s4-l07",
       "order": 7,
       "optional": false,
-      "skill": "A6+A4+A5+A2 (add,take,missing)",
+      "skill": "A6+A4+A2 (take,missing,compare)",
       "activityTypes": [
         "A6",
         "A4",
-        "A5",
         "A2"
       ],
       "numberRange": [
@@ -2693,23 +2692,6 @@
         },
         {
           "type": "A4",
-          "kind": "add",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A5",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A4",
           "kind": "take",
           "max": 10,
           "showSymbols": true,
@@ -2723,7 +2705,25 @@
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "take",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "compare",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-cmp-01"
           ]
         },
         {
@@ -2733,7 +2733,7 @@
           "review": true,
           "count": 2,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         }
       ]
@@ -2745,11 +2745,10 @@
       "level": "s4-l08",
       "order": 8,
       "optional": false,
-      "skill": "A6+A4+A5+A2 (add,take,missing)",
+      "skill": "A6+A4+A2 (take,missing,compare)",
       "activityTypes": [
         "A6",
         "A4",
-        "A5",
         "A2"
       ],
       "numberRange": [
@@ -2778,23 +2777,6 @@
         },
         {
           "type": "A4",
-          "kind": "add",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A5",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A4",
           "kind": "take",
           "max": 10,
           "showSymbols": true,
@@ -2808,7 +2790,25 @@
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "take",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "compare",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-cmp-01"
           ]
         },
         {
@@ -2818,7 +2818,7 @@
           "review": true,
           "count": 2,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         }
       ]
@@ -2830,11 +2830,10 @@
       "level": "s4-l09",
       "order": 9,
       "optional": false,
-      "skill": "A6+A4+A5+A2 (add,take,missing)",
+      "skill": "A6+A4+A2 (take,missing,compare)",
       "activityTypes": [
         "A6",
         "A4",
-        "A5",
         "A2"
       ],
       "numberRange": [
@@ -2863,23 +2862,6 @@
         },
         {
           "type": "A4",
-          "kind": "add",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A5",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A4",
           "kind": "take",
           "max": 10,
           "showSymbols": true,
@@ -2893,7 +2875,25 @@
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "take",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "compare",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-cmp-01"
           ]
         },
         {
@@ -2903,7 +2903,7 @@
           "review": true,
           "count": 2,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         }
       ]
@@ -2915,11 +2915,10 @@
       "level": "s4-l10",
       "order": 10,
       "optional": false,
-      "skill": "A6+A4+A5+A2 (add,take,missing)",
+      "skill": "A6+A4+A2 (take,missing,compare)",
       "activityTypes": [
         "A6",
         "A4",
-        "A5",
         "A2"
       ],
       "numberRange": [
@@ -2948,23 +2947,6 @@
         },
         {
           "type": "A4",
-          "kind": "add",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A5",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A4",
           "kind": "take",
           "max": 10,
           "showSymbols": true,
@@ -2978,7 +2960,25 @@
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "take",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "compare",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-cmp-01"
           ]
         },
         {
@@ -2988,7 +2988,7 @@
           "review": true,
           "count": 2,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         }
       ]
@@ -3619,7 +3619,8 @@
           "showSymbols": true,
           "voiceIds": [
             "story-cmp-01"
-          ]
+          ],
+          "focusSign": ">"
         },
         {
           "type": "A10",
@@ -3630,7 +3631,8 @@
           "showSymbols": true,
           "voiceIds": [
             "story-cmp-01"
-          ]
+          ],
+          "focusSign": ">"
         },
         {
           "type": "A6",
@@ -3649,7 +3651,8 @@
           "showSymbols": true,
           "voiceIds": [
             "story-cmp-01"
-          ]
+          ],
+          "focusSign": ">"
         },
         {
           "type": "A10",
@@ -3660,7 +3663,8 @@
           "showSymbols": true,
           "voiceIds": [
             "story-cmp-01"
-          ]
+          ],
+          "focusSign": ">"
         },
         {
           "type": "A2",
@@ -3712,7 +3716,8 @@
           "showSymbols": true,
           "voiceIds": [
             "story-cmp-01"
-          ]
+          ],
+          "focusSign": "<"
         },
         {
           "type": "A10",
@@ -3723,7 +3728,8 @@
           "showSymbols": true,
           "voiceIds": [
             "story-cmp-01"
-          ]
+          ],
+          "focusSign": "<"
         },
         {
           "type": "A1",
@@ -3742,7 +3748,8 @@
           "showSymbols": true,
           "voiceIds": [
             "story-cmp-01"
-          ]
+          ],
+          "focusSign": "<"
         },
         {
           "type": "A4",
@@ -3764,7 +3771,8 @@
           "count": 2,
           "voiceIds": [
             "story-cmp-01"
-          ]
+          ],
+          "focusSign": "<"
         }
       ]
     },
@@ -4714,7 +4722,7 @@
       "level": "s7-l01",
       "order": 1,
       "optional": false,
-      "skill": "A4+A5 (add,take,missing,compare)",
+      "skill": "A4+A5 (add,combine)",
       "activityTypes": [
         "A4",
         "A5"
@@ -4746,11 +4754,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -4763,7 +4771,7 @@
         },
         {
           "type": "A4",
-          "kind": "missing",
+          "kind": "add",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
@@ -4772,11 +4780,11 @@
         },
         {
           "type": "A4",
-          "kind": "compare",
+          "kind": "combine",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-cmp-01"
+            "story-add-01"
           ]
         },
         {
@@ -4799,7 +4807,7 @@
       "level": "s7-l02",
       "order": 2,
       "optional": false,
-      "skill": "A4+A5 (combine,take,missing,compare,add)",
+      "skill": "A4+A5 (add,combine)",
       "activityTypes": [
         "A4",
         "A5"
@@ -4822,7 +4830,7 @@
       "activities": [
         {
           "type": "A4",
-          "kind": "combine",
+          "kind": "add",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
@@ -4831,11 +4839,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -4848,7 +4856,7 @@
         },
         {
           "type": "A4",
-          "kind": "missing",
+          "kind": "add",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
@@ -4857,11 +4865,11 @@
         },
         {
           "type": "A4",
-          "kind": "compare",
+          "kind": "combine",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-cmp-01"
+            "story-add-01"
           ]
         },
         {
@@ -4884,7 +4892,7 @@
       "level": "s7-l03",
       "order": 3,
       "optional": false,
-      "skill": "A4+A5+A10 (take,missing,compare,c)",
+      "skill": "A4+A5+A10 (add,combine,c)",
       "activityTypes": [
         "A4",
         "A5",
@@ -4908,7 +4916,7 @@
       "activities": [
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "add",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
@@ -4917,11 +4925,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -4934,7 +4942,7 @@
         },
         {
           "type": "A4",
-          "kind": "missing",
+          "kind": "add",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
@@ -4943,11 +4951,11 @@
         },
         {
           "type": "A4",
-          "kind": "compare",
+          "kind": "combine",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-cmp-01"
+            "story-add-01"
           ]
         },
         {
@@ -4972,7 +4980,7 @@
       "level": "s7-l04",
       "order": 4,
       "optional": false,
-      "skill": "A4+A5 (compare,take,missing,add)",
+      "skill": "A4+A5 (add,combine)",
       "activityTypes": [
         "A4",
         "A5"
@@ -4995,7 +5003,7 @@
       "activities": [
         {
           "type": "A4",
-          "kind": "compare",
+          "kind": "add",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
@@ -5004,11 +5012,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -5021,7 +5029,7 @@
         },
         {
           "type": "A4",
-          "kind": "missing",
+          "kind": "add",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
@@ -5030,11 +5038,11 @@
         },
         {
           "type": "A4",
-          "kind": "compare",
+          "kind": "combine",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-cmp-01"
+            "story-add-01"
           ]
         },
         {
@@ -5057,10 +5065,9 @@
       "level": "s7-l05",
       "order": 5,
       "optional": false,
-      "skill": "A4+A5 (missing,take,compare,add)",
+      "skill": "A4 (take,missing,compare)",
       "activityTypes": [
-        "A4",
-        "A5"
+        "A4"
       ],
       "numberRange": [
         10,
@@ -5080,15 +5087,6 @@
       "activities": [
         {
           "type": "A4",
-          "kind": "missing",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A4",
           "kind": "take",
           "max": 10,
           "showSymbols": true,
@@ -5097,20 +5095,12 @@
           ]
         },
         {
-          "type": "A5",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
           "type": "A4",
           "kind": "missing",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         },
         {
@@ -5124,13 +5114,31 @@
         },
         {
           "type": "A4",
-          "kind": "add",
+          "kind": "take",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "missing",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "take",
           "max": 10,
           "showSymbols": true,
           "review": true,
           "count": 2,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         }
       ]
@@ -5142,10 +5150,9 @@
       "level": "s7-l06",
       "order": 6,
       "optional": false,
-      "skill": "A4+A5+A10 (add,take,missing,compare,c)",
+      "skill": "A4+A10 (take,missing,compare,c)",
       "activityTypes": [
         "A4",
-        "A5",
         "A10"
       ],
       "numberRange": [
@@ -5166,11 +5173,29 @@
       "activities": [
         {
           "type": "A4",
-          "kind": "add",
+          "kind": "take",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "missing",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "compare",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-cmp-01"
           ]
         },
         {
@@ -5183,29 +5208,12 @@
           ]
         },
         {
-          "type": "A5",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
           "type": "A4",
           "kind": "missing",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A4",
-          "kind": "compare",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-cmp-01"
+            "story-take-01"
           ]
         },
         {
@@ -5230,10 +5238,9 @@
       "level": "s7-l07",
       "order": 7,
       "optional": false,
-      "skill": "A4+A5 (combine,take,missing,compare,add)",
+      "skill": "A4 (take,missing,compare)",
       "activityTypes": [
-        "A4",
-        "A5"
+        "A4"
       ],
       "numberRange": [
         10,
@@ -5253,15 +5260,6 @@
       "activities": [
         {
           "type": "A4",
-          "kind": "combine",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A4",
           "kind": "take",
           "max": 10,
           "showSymbols": true,
@@ -5270,20 +5268,12 @@
           ]
         },
         {
-          "type": "A5",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
           "type": "A4",
           "kind": "missing",
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         },
         {
@@ -5297,13 +5287,31 @@
         },
         {
           "type": "A4",
-          "kind": "add",
+          "kind": "take",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "missing",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "take",
           "max": 10,
           "showSymbols": true,
           "review": true,
           "count": 2,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         }
       ]
@@ -5315,10 +5323,9 @@
       "level": "s7-l08",
       "order": 8,
       "optional": false,
-      "skill": "A4+A5 (take,missing,compare,add)",
+      "skill": "A4 (take,missing,compare)",
       "activityTypes": [
-        "A4",
-        "A5"
+        "A4"
       ],
       "numberRange": [
         10,
@@ -5342,24 +5349,7 @@
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
-          ]
-        },
-        {
-          "type": "A4",
-          "kind": "take",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
             "story-take-01"
-          ]
-        },
-        {
-          "type": "A5",
-          "max": 10,
-          "showSymbols": true,
-          "voiceIds": [
-            "story-add-01"
           ]
         },
         {
@@ -5368,7 +5358,7 @@
           "max": 10,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         },
         {
@@ -5382,13 +5372,31 @@
         },
         {
           "type": "A4",
-          "kind": "add",
+          "kind": "take",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "missing",
+          "max": 10,
+          "showSymbols": true,
+          "voiceIds": [
+            "story-take-01"
+          ]
+        },
+        {
+          "type": "A4",
+          "kind": "take",
           "max": 10,
           "showSymbols": true,
           "review": true,
           "count": 2,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         }
       ]
@@ -5577,7 +5585,7 @@
       "level": "s8-l01",
       "order": 1,
       "optional": false,
-      "skill": "A4+A9+A2 (add,take,combine,missing)",
+      "skill": "A4+A9+A2 (add,combine)",
       "activityTypes": [
         "A4",
         "A9",
@@ -5610,11 +5618,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 100,
           "showSymbols": true,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -5627,7 +5635,7 @@
         },
         {
           "type": "A4",
-          "kind": "combine",
+          "kind": "add",
           "max": 100,
           "showSymbols": true,
           "voiceIds": [
@@ -5636,7 +5644,7 @@
         },
         {
           "type": "A4",
-          "kind": "missing",
+          "kind": "combine",
           "max": 100,
           "showSymbols": true,
           "voiceIds": [
@@ -5662,7 +5670,7 @@
       "level": "s8-l02",
       "order": 2,
       "optional": false,
-      "skill": "A4+A9+A2 (add,take,combine,missing)",
+      "skill": "A4+A9+A2 (add,combine)",
       "activityTypes": [
         "A4",
         "A9",
@@ -5695,11 +5703,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 100,
           "showSymbols": true,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -5712,7 +5720,7 @@
         },
         {
           "type": "A4",
-          "kind": "combine",
+          "kind": "add",
           "max": 100,
           "showSymbols": true,
           "voiceIds": [
@@ -5721,7 +5729,7 @@
         },
         {
           "type": "A4",
-          "kind": "missing",
+          "kind": "combine",
           "max": 100,
           "showSymbols": true,
           "voiceIds": [
@@ -5747,7 +5755,7 @@
       "level": "s8-l03",
       "order": 3,
       "optional": false,
-      "skill": "A4+A9+A2 (add,take,combine,missing)",
+      "skill": "A4+A9+A2 (add,combine)",
       "activityTypes": [
         "A4",
         "A9",
@@ -5780,11 +5788,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 100,
           "showSymbols": true,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -5797,7 +5805,7 @@
         },
         {
           "type": "A4",
-          "kind": "combine",
+          "kind": "add",
           "max": 100,
           "showSymbols": true,
           "voiceIds": [
@@ -5806,7 +5814,7 @@
         },
         {
           "type": "A4",
-          "kind": "missing",
+          "kind": "combine",
           "max": 100,
           "showSymbols": true,
           "voiceIds": [
@@ -5832,7 +5840,7 @@
       "level": "s8-l04",
       "order": 4,
       "optional": false,
-      "skill": "A4+A9+A2 (add,take,combine,missing)",
+      "skill": "A4+A9+A2 (add,combine)",
       "activityTypes": [
         "A4",
         "A9",
@@ -5865,11 +5873,11 @@
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "combine",
           "max": 100,
           "showSymbols": true,
           "voiceIds": [
-            "story-take-01"
+            "story-add-01"
           ]
         },
         {
@@ -5882,7 +5890,7 @@
         },
         {
           "type": "A4",
-          "kind": "combine",
+          "kind": "add",
           "max": 100,
           "showSymbols": true,
           "voiceIds": [
@@ -5891,7 +5899,7 @@
         },
         {
           "type": "A4",
-          "kind": "missing",
+          "kind": "combine",
           "max": 100,
           "showSymbols": true,
           "voiceIds": [
@@ -5917,7 +5925,7 @@
       "level": "s8-l05",
       "order": 5,
       "optional": false,
-      "skill": "A4+A9+A2 (add,take,combine,missing)",
+      "skill": "A4+A9+A2 (take,missing,compare)",
       "activityTypes": [
         "A4",
         "A9",
@@ -5941,16 +5949,16 @@
       "activities": [
         {
           "type": "A4",
-          "kind": "add",
+          "kind": "take",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "missing",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
@@ -5967,20 +5975,20 @@
         },
         {
           "type": "A4",
-          "kind": "combine",
+          "kind": "take",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         },
         {
           "type": "A4",
-          "kind": "missing",
+          "kind": "compare",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-cmp-01"
           ]
         },
         {
@@ -6002,7 +6010,7 @@
       "level": "s8-l06",
       "order": 6,
       "optional": false,
-      "skill": "A4+A9+A2 (add,take,combine,missing)",
+      "skill": "A4+A9+A2 (take,missing,compare)",
       "activityTypes": [
         "A4",
         "A9",
@@ -6026,16 +6034,16 @@
       "activities": [
         {
           "type": "A4",
-          "kind": "add",
+          "kind": "take",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "missing",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
@@ -6052,20 +6060,20 @@
         },
         {
           "type": "A4",
-          "kind": "combine",
+          "kind": "take",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         },
         {
           "type": "A4",
-          "kind": "missing",
+          "kind": "compare",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-cmp-01"
           ]
         },
         {
@@ -6087,7 +6095,7 @@
       "level": "s8-l07",
       "order": 7,
       "optional": false,
-      "skill": "A4+A9+A2 (add,take,combine,missing)",
+      "skill": "A4+A9+A2 (take,missing,compare)",
       "activityTypes": [
         "A4",
         "A9",
@@ -6111,16 +6119,16 @@
       "activities": [
         {
           "type": "A4",
-          "kind": "add",
+          "kind": "take",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "missing",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
@@ -6137,20 +6145,20 @@
         },
         {
           "type": "A4",
-          "kind": "combine",
+          "kind": "take",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         },
         {
           "type": "A4",
-          "kind": "missing",
+          "kind": "compare",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-cmp-01"
           ]
         },
         {
@@ -6172,7 +6180,7 @@
       "level": "s8-l08",
       "order": 8,
       "optional": false,
-      "skill": "A4+A9+A2 (add,take,combine,missing)",
+      "skill": "A4+A9+A2 (take,missing,compare)",
       "activityTypes": [
         "A4",
         "A9",
@@ -6196,16 +6204,16 @@
       "activities": [
         {
           "type": "A4",
-          "kind": "add",
+          "kind": "take",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         },
         {
           "type": "A4",
-          "kind": "take",
+          "kind": "missing",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
@@ -6222,20 +6230,20 @@
         },
         {
           "type": "A4",
-          "kind": "combine",
+          "kind": "take",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-take-01"
           ]
         },
         {
           "type": "A4",
-          "kind": "missing",
+          "kind": "compare",
           "max": 20,
           "showSymbols": true,
           "voiceIds": [
-            "story-add-01"
+            "story-cmp-01"
           ]
         },
         {

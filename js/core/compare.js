@@ -37,8 +37,17 @@ export function compareSentence(a, b, lang = "vi", mode = "number") {
   return `${A} bằng ${B}`;
 }
 
-function buildSignSequence(count, allowEqual, rng) {
+function buildSignSequence(count, allowEqual, rng, focusSign = null) {
   let pool;
+  if (focusSign === ">" || focusSign === "<") {
+    if (allowEqual && count >= 3) {
+      const eqCount = Math.max(1, Math.round(count * 0.25));
+      pool = Array.from({ length: count }, (_, i) => (i < eqCount ? "=" : focusSign));
+    } else {
+      pool = Array.from({ length: count }, () => focusSign);
+    }
+    return shuffleWithRng(pool, rng);
+  }
   if (count === 10) {
     pool = allowEqual
       ? [">", ">", ">", ">", "<", "<", "<", "<", "=", "="]
@@ -88,9 +97,9 @@ function pickPairForSign(sign, max, rng, prevKey) {
 /**
  * Generate a balanced set of comparison sign problems (A10a / A10b).
  */
-export function generateSignSet({ count = 10, max = 10, allowEqual = false, seed = 1 }) {
+export function generateSignSet({ count = 10, max = 10, allowEqual = false, focusSign = null, seed = 1 }) {
   const rng = mulberry32(seed);
-  const seq = buildSignSequence(count, allowEqual, rng);
+  const seq = buildSignSequence(count, allowEqual, rng, focusSign);
   let prevKey = "";
   return seq.map((targetSign) => {
     const { a, b, key } = pickPairForSign(targetSign, max, rng, prevKey);

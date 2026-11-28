@@ -22,10 +22,28 @@ export function findSuggestedLesson(lessons, stars) {
   return nextOpt ? nextOpt.id : lessons[0]?.id;
 }
 
-export function renderHomeMap(container, { lessons, storyData, progress, t, lang, onSelectLesson }) {
+export function renderHomeMap(container, { lessons, storyData, progress, t, lang, onSelectLesson, onOpenTracing }) {
   const nextId = findSuggestedLesson(lessons, progress.stars || {});
+  const wrap = document.createElement("div");
+  wrap.style.cssText = "width:100%;height:100%;display:flex;flex-direction:column;gap:12px;";
+
+  if (onOpenTracing) {
+    const bar = document.createElement("div");
+    bar.style.cssText = "display:flex;justify-content:center;flex-shrink:0;";
+    const traceBtn = document.createElement("button");
+    traceBtn.id = "btn-open-tracing";
+    traceBtn.className = "btn-pill btn-primary";
+    traceBtn.style.cssText = "min-height:56px;font-size:22px;padding:8px 24px;";
+    traceBtn.textContent = t("ui.traceBtn");
+    traceBtn.addEventListener("click", onOpenTracing);
+    bar.appendChild(traceBtn);
+    wrap.appendChild(bar);
+  }
+
   const grid = document.createElement("div");
   grid.className = "map-grid";
+  grid.style.flex = "1";
+  grid.style.minHeight = "0";
 
   // Arrange stages 1..8 and put stage 9 (Festival Plaza) in the middle (index 4)
   const order = [1, 2, 3, 4, 9, 5, 6, 7, 8];
@@ -69,6 +87,7 @@ export function renderHomeMap(container, { lessons, storyData, progress, t, lang
     grid.appendChild(card);
   }
 
+  wrap.appendChild(grid);
   container.innerHTML = "";
-  container.appendChild(grid);
+  container.appendChild(wrap);
 }

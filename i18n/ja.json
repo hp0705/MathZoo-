@@ -26,6 +26,8 @@
     "tenFramePrompt": "じゅうの わくに いれよう！",
     "matchPrompt": "すうじと おなじ えを えらぼう！",
     "tracePrompt": "すうじの {n}を なぞってみよう！",
+    "traceStudioTitle": "すうじの れんしゅう (1から20)",
+    "traceBtn": "✏️ すうじを かこう (1–20)",
     "boardPrompt": "あいている すうじを いれよう！",
     "compareSignPrompt": "まんなかに あう しるしを いれよう！",
     "ordinalPrompt": "{ord}は どれかな？",

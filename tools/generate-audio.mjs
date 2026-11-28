@@ -139,7 +139,7 @@ function collectTexts() {
       }
     }
     if (i18n[lang].ui?.tracePrompt) {
-      for (let d = 0; d <= 9; d++) {
+      for (let d = 0; d <= 20; d++) {
         add(lang, i18n[lang].ui.tracePrompt.replace("{n}", String(d)));
         add(lang, i18n[lang].ui.tracePrompt.replace("{n}", numberToWords(d, lang)));
       }
